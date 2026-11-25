@@ -1,6 +1,6 @@
 # Guide d’administration (français)
 
-Ce site est modifiable sans toucher au code. Le panneau se trouve sur **`https://portfolio-yassine.vercel.app/admin/`** (ou sur `http://localhost:5173/admin/` en local). Il n’est pas lié depuis le site public et il est exclu de `robots.txt` et du sitemap.
+Ce site est modifiable sans toucher au code. Le panneau se trouve sur **`https://yassine-tbib-portfolio.vercel.app/admin/`** (ou sur `http://localhost:5173/admin/` en local). Il n’est pas lié depuis le site public et il est exclu de `robots.txt` et du sitemap.
 
 ## Se connecter
 
@@ -70,4 +70,4 @@ N’ajoutez un lien social que s’il a été vérifié. Laissez la liste vide t
 - Vérifiez le rendu dans les deux langues avant de publier.
 - Testez toujours la prévisualisation d’un brouillon avant de cliquer sur **Publier**.
 - Si un changement pose problème, reverted la commit de contenu sur `main` ou restaurez un déploiement Vercel précédent.
-- Si la connexion GitHub échoue, vérifiez que l’URL de callback de l’OAuth App est bien `https://portfolio-yassine.vercel.app/api/callback` et que les variables `OAUTH_GITHUB_CLIENT_ID` / `OAUTH_GITHUB_CLIENT_SECRET` sont définies sur Vercel.
+- Si la connexion GitHub échoue, vérifiez que l’URL de callback de l’OAuth App est bien `https://yassine-tbib-portfolio.vercel.app/api/callback` et que les variables `OAUTH_GITHUB_CLIENT_ID` / `OAUTH_GITHUB_CLIENT_SECRET` sont définies sur Vercel.

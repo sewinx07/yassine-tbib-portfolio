@@ -19,7 +19,7 @@ Set these in **Production** (and in Preview only if editors need to sign in on p
 
 | Variable | Purpose |
 |---|---|
-| `SITE_URL` | Canonical origin, e.g. `https://portfolio-yassine.vercel.app`. Used for OAuth callback, generated `config.yml` and sitemap. |
+| `SITE_URL` | Canonical origin, e.g. `https://yassine-tbib-portfolio.vercel.app`. Used for OAuth callback, generated `config.yml` and sitemap. |
 | `GITHUB_REPO` | `owner/repo` that stores the content. |
 | `OAUTH_GITHUB_CLIENT_ID` | GitHub OAuth App client ID. |
 | `OAUTH_GITHUB_CLIENT_SECRET` | GitHub OAuth App secret. Server-only. |

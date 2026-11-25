@@ -21,7 +21,7 @@ function cleanUrl(value) {
 
 function siteUrl() {
   if (env.SITE_URL) return cleanUrl(env.SITE_URL)
-  if (!local && env.VERCEL_URL) return cleanUrl(`https://${env.VERCEL_URL}`)
+  if (!local) return 'https://yassine-tbib-portfolio.vercel.app'
   return 'http://localhost:5173'
 }
 
