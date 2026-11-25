@@ -88,7 +88,7 @@ export default function Lab3D() {
           <div className="mt-5 flex items-center justify-between gap-6">
             <p className="text-[10px] uppercase tracking-[0.16em] text-bone-dim">{content.sections.lab.drag}</p>
             <div className="flex items-center gap-3">
-              <button type="button" onClick={() => go(-1)} className="icon-button h-9 w-9" aria-label="Previous frame">
+              <button type="button" onClick={() => go(-1)} className="icon-button" aria-label="Previous frame">
                 <ChevronLeft className="h-4 w-4" />
               </button>
               {frames.map((_, i) => (
@@ -98,12 +98,16 @@ export default function Lab3D() {
                   onClick={() => setIndex(i)}
                   aria-label={`Frame ${i + 1}`}
                   aria-current={i === index}
-                  className={`h-1.5 rounded-full transition-all duration-300 ${
-                    i === index ? 'w-8 bg-crimson' : 'w-1.5 bg-white/25 hover:bg-white/60'
-                  }`}
-                />
+                  className="flex h-11 w-6 items-center justify-center"
+                >
+                  <span
+                    className={`block h-1.5 rounded-full transition-all duration-300 ${
+                      i === index ? 'w-8 bg-crimson' : 'w-1.5 bg-white/25 hover:bg-white/60'
+                    }`}
+                  />
+                </button>
               ))}
-              <button type="button" onClick={() => go(1)} className="icon-button h-9 w-9" aria-label="Next frame">
+              <button type="button" onClick={() => go(1)} className="icon-button" aria-label="Next frame">
                 <ChevronRight className="h-4 w-4" />
               </button>
             </div>

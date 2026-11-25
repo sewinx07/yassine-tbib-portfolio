@@ -52,7 +52,7 @@ export default function Nav() {
           <button
             type="button"
             onClick={toggle}
-            className="rounded-full border border-white/15 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.18em] text-bone transition-colors hover:border-crimson"
+            className="inline-flex h-11 min-w-[3rem] items-center justify-center rounded-full border border-white/15 px-3 text-[10px] font-bold uppercase tracking-[0.18em] text-bone transition-colors hover:border-crimson"
             aria-label={locale === 'fr' ? 'Switch to English' : 'Passer en français'}
           >
             {locale === 'fr' ? 'EN' : 'FR'}
@@ -60,7 +60,7 @@ export default function Nav() {
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
-            className="icon-button h-9 w-9 md:hidden"
+            className="icon-button md:hidden"
             aria-expanded={open}
             aria-label={open ? content.topbar.close : content.topbar.menu}
           >
