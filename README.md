@@ -79,7 +79,7 @@ npm run cms:local
 npm run prepare:admin
 ```
 
-Copy `.env.example` to `.env.local` for local checks. Required build/deploy variables are `SITE_URL`, `GITHUB_REPO`, `OAUTH_GITHUB_CLIENT_ID`, `OAUTH_GITHUB_CLIENT_SECRET`, `RESEND_API_KEY`, `CONTACT_TO_EMAIL` and `CONTACT_FROM_EMAIL`; `UPSTASH_REDIS_REST_URL` / `UPSTASH_REDIS_REST_TOKEN` are optional. Secrets are used only by `api/*` functions and are never written to `dist/`.
+Copy `.env.example` to `.env.local` for local checks. Required build/deploy variables are `SITE_URL`, `GITHUB_REPO`, `OAUTH_GITHUB_CLIENT_ID` and `OAUTH_GITHUB_CLIENT_SECRET`. `OAUTH_GITHUB_SCOPE` and `ALLOWED_ADMIN_ORIGINS` are optional. Secrets are used only by the OAuth API functions and are never written to `dist/`. The contact form simply opens the visitor's email app; no delivery service is needed.
 
 Edit [`admin/config.template.yml`](admin/config.template.yml), never the generated `public/admin/config.yml`. The French editor guide is in [`ADMIN_GUIDE.md`](ADMIN_GUIDE.md); deployment and OAuth setup are in [`DEPLOY.md`](DEPLOY.md).
 
@@ -112,7 +112,7 @@ public/assets/           optimized WebP/AVIF-ready exports
 
 ## Deployment
 
-Deploy on Vercel with Node 26 (`.nvmrc`). `vercel.json` rewrites unknown paths to `index.html` while excluding `/admin/*`, `/api/*` and static assets, and sets security headers plus cache rules. See [`DEPLOY.md`](DEPLOY.md) for the OAuth app, Resend, optional Upstash and preview/rollback workflow. Confirm the final `og:image` URL and social links before going live — see [`TODO.md`](TODO.md).
+Deploy on Vercel with Node 26 (`.nvmrc`). `vercel.json` rewrites unknown paths to `index.html` while excluding `/admin/*`, `/api/*` and static assets, and sets security headers plus cache rules. See [`DEPLOY.md`](DEPLOY.md) for the OAuth app and preview/rollback workflow. Confirm the final `og:image` URL and social links before going live — see [`TODO.md`](TODO.md).
 
 Vercel Web Analytics is dynamically imported in production only. Speed Insights is intentionally optional and not enabled by default.
 

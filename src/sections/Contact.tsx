@@ -1,4 +1,4 @@
-import { lazy, Suspense, useRef, useState } from 'react'
+import { lazy, Suspense, useState } from 'react'
 import type { FormEvent } from 'react'
 import { ArrowDownToLine, Mail, MapPin, Phone } from 'lucide-react'
 import SectionHeading from '../components/SectionHeading'
@@ -8,53 +8,18 @@ import { contact } from '../lib/content'
 import { useLanguage } from '../i18n/LanguageContext'
 import Magnetic from '../components/Magnetic'
 
-type Status = 'idle' | 'sending' | 'sent' | 'fallback'
-
 export default function Contact() {
-  const { content, locale } = useLanguage()
+  const { content } = useLanguage()
   const c = content.sections.contact
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
-  const [website, setWebsite] = useState('')
-  const [status, setStatus] = useState<Status>('idle')
-  const startedAt = useRef(new Date().toISOString())
 
-  const openEmailApp = () => {
-    const subject = encodeURIComponent(`Portfolio — ${name || 'Contact'}`)
-    const body = encodeURIComponent(`${message}\n\n${email}`)
-    window.location.href = `mailto:${contact.email}?subject=${subject}&body=${body}`
-  }
-
-  const send = async (event: FormEvent) => {
+  const submit = (event: FormEvent) => {
     event.preventDefault()
-    setStatus('sending')
-
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, message, website, startedAt: startedAt.current }),
-      })
-      const data = (await response.json().catch(() => ({}))) as { ok?: boolean; code?: string }
-      if (!response.ok || !data.ok) {
-        if (data.code === 'contact_not_configured' || response.status === 404 || response.status === 405) {
-          setStatus('fallback')
-          openEmailApp()
-          return
-        }
-        throw new Error('delivery failed')
-      }
-      setName('')
-      setEmail('')
-      setMessage('')
-      setWebsite('')
-      startedAt.current = new Date().toISOString()
-      setStatus('sent')
-    } catch {
-      setStatus('fallback')
-      openEmailApp()
-    }
+    const subject = encodeURIComponent(`Portfolio — ${name || 'Contact'}`)
+    const body = encodeURIComponent(`${message}\n\n${name}\n${email}`)
+    window.location.href = `mailto:${contact.email}?subject=${subject}&body=${body}`
   }
 
   return (
@@ -110,9 +75,9 @@ export default function Contact() {
                 <ContactObject />
               </Suspense>
             </div>
-            <form onSubmit={send} className="relative border border-white/15 bg-ink/80 p-7 backdrop-blur-sm md:p-10">
+            <form onSubmit={submit} className="relative border border-white/15 bg-ink/80 p-7 backdrop-blur-sm md:p-10">
               <div className="mb-8 flex items-center justify-between">
-                <span className="eyebrow">{locale === 'fr' ? 'Message' : 'Message'}</span>
+                <span className="eyebrow">Message</span>
                 <span className="h-px w-16 bg-crimson" />
               </div>
               <label className="block">
@@ -121,8 +86,7 @@ export default function Contact() {
                   required
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  disabled={status === 'sending'}
-                  className="mt-2 w-full border-b border-white/20 bg-transparent py-3 text-sm text-bone outline-none transition-colors focus:border-crimson disabled:opacity-50"
+                  className="mt-2 w-full border-b border-white/20 bg-transparent py-3 text-sm text-bone outline-none transition-colors focus:border-crimson"
                   placeholder={c.formName}
                 />
               </label>
@@ -133,8 +97,7 @@ export default function Contact() {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  disabled={status === 'sending'}
-                  className="mt-2 w-full border-b border-white/20 bg-transparent py-3 text-sm text-bone outline-none transition-colors focus:border-crimson disabled:opacity-50"
+                  className="mt-2 w-full border-b border-white/20 bg-transparent py-3 text-sm text-bone outline-none transition-colors focus:border-crimson"
                   placeholder={c.formEmail}
                 />
               </label>
@@ -145,38 +108,17 @@ export default function Contact() {
                   rows={4}
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
-                  disabled={status === 'sending'}
-                  className="mt-2 w-full resize-none border-b border-white/20 bg-transparent py-3 text-sm text-bone outline-none transition-colors focus:border-crimson disabled:opacity-50"
+                  className="mt-2 w-full resize-none border-b border-white/20 bg-transparent py-3 text-sm text-bone outline-none transition-colors focus:border-crimson"
                   placeholder={c.formMessage}
                 />
               </label>
-              <div className="absolute -left-[9999px]" aria-hidden="true">
-                <label htmlFor="contact-website">Website</label>
-                <input
-                  id="contact-website"
-                  name="website"
-                  tabIndex={-1}
-                  autoComplete="off"
-                  value={website}
-                  onChange={(e) => setWebsite(e.target.value)}
-                />
-              </div>
               <button
                 type="submit"
-                disabled={status === 'sending'}
-                className="mt-8 w-full rounded-full bg-crimson py-4 text-[11px] font-bold uppercase tracking-editorial text-white transition-colors hover:bg-crimson-bright disabled:cursor-wait disabled:opacity-70"
+                className="mt-8 w-full rounded-full bg-crimson py-4 text-[11px] font-bold uppercase tracking-editorial text-white transition-colors hover:bg-crimson-bright"
               >
-                {status === 'sending' ? c.formSending : c.formSend}
+                {c.formSend}
               </button>
-              <p className="mt-4 text-center text-[10px] text-bone-dim/70" aria-live="polite">
-                {status === 'sent'
-                  ? c.formSuccess
-                  : status === 'fallback'
-                    ? c.formFallback
-                    : status === 'sending'
-                      ? c.formSending
-                      : c.formNote}
-              </p>
+              <p className="mt-4 text-center text-[10px] text-bone-dim/70">{c.formNote}</p>
             </form>
           </div>
         </div>
