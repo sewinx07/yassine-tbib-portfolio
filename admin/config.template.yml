@@ -1,0 +1,383 @@
+# Template generated into public/admin/config.yml by scripts/generate-site.mjs.
+# Do not edit public/admin/config.yml by hand — edit this file instead.
+__LOCAL_BACKEND__site_url: __BASE_URL__
+locale: fr
+media_folder: public/assets/uploads
+public_folder: /assets/uploads
+publish_mode: editorial_workflow
+
+backend:
+  name: github
+  repo: __GITHUB_REPO__
+  branch: main
+  base_url: __BASE_URL__
+  auth_endpoint: /api/auth
+
+collections:
+  - name: settings
+    label: "Réglages du site"
+    files:
+      - name: homepage
+        label: "Page d’accueil"
+        file: content/settings.json
+        fields:
+          - label: "Langue affichée au départ"
+            name: defaultLanguage
+            widget: select
+            options: ["fr", "en", "ar"]
+            default: "fr"
+            hint: "Choisissez la langue vue par les visiteurs quand ils arrivent. L’anglais est prêt, l’arabe arrivera plus tard."
+          - label: "Textes du haut de page"
+            name: hero
+            widget: object
+            hint: "Tout ce qui s’affiche dans la grande première section."
+            fields:
+              - {label: "Salutation", name: greeting, widget: object, hint: "Par exemple Bonjour, je suis.", fields: [{label: "Français", name: fr, widget: string, hint: "Texte en français."}, {label: "English", name: en, widget: string, hint: "Texte en anglais."}]}
+              - {label: "Prénom", name: firstName, widget: object, hint: "Affiché en très gros.", fields: [{label: "Français", name: fr, widget: string, hint: "Prénom en français."}, {label: "English", name: en, widget: string, hint: "Prénom en anglais."}]}
+              - {label: "Nom", name: lastName, widget: object, hint: "Affiché en très gros.", fields: [{label: "Français", name: fr, widget: string, hint: "Nom en français."}, {label: "English", name: en, widget: string, hint: "Nom en anglais."}]}
+              - {label: "Métier", name: title, widget: object, hint: "Phrase courte sous le nom.", fields: [{label: "Français", name: fr, widget: string, hint: "Métier en français."}, {label: "English", name: en, widget: string, hint: "Métier en anglais."}]}
+              - {label: "Présentation", name: bio, widget: object, hint: "Quelques lignes sur votre parcours.", fields: [{label: "Français", name: fr, widget: text, hint: "Présentation en français."}, {label: "English", name: en, widget: text, hint: "Présentation en anglais."}]}
+              - {label: "Mot décoratif", name: word, widget: object, hint: "Mot répété en filigrane.", fields: [{label: "Français", name: fr, widget: string, hint: "Mot en français."}, {label: "English", name: en, widget: string, hint: "Mot en anglais."}]}
+              - {label: "Accroche", name: tagline, widget: object, hint: "Phrise mise en avant sous le nom.", fields: [{label: "Français", name: fr, widget: string, hint: "Accroche en français."}, {label: "English", name: en, widget: string, hint: "Accroche en anglais."}]}
+              - {label: "Appel au défilement", name: scroll, widget: object, hint: "Texte invitant à descendre.", fields: [{label: "Français", name: fr, widget: string, hint: "Texte en français."}, {label: "English", name: en, widget: string, hint: "Texte en anglais."}]}
+              - {label: "Ville", name: location, widget: object, hint: "Exemple Gabès, Tunisie.", fields: [{label: "Français", name: fr, widget: string, hint: "Ville en français."}, {label: "English", name: en, widget: string, hint: "Ville en anglais."}]}
+              - label: "Libellés des trois chiffres"
+                name: statsLabel
+                widget: list
+                hint: "Trois libellés dans l’ordre des chiffres 3 / 11 / 4."
+                field:
+                  label: "Libellé"
+                  name: label
+                  widget: object
+                  hint: "Un libellé par chiffre."
+                  fields:
+                    - {label: "Français", name: fr, widget: string, hint: "Libellé en français."}
+                    - {label: "English", name: en, widget: string, hint: "Libellé en anglais."}
+          - label: "Bandeau du haut"
+            name: topbar
+            widget: object
+            hint: "Informations visibles en permanence en haut du site."
+            fields:
+              - {label: "Rôle", name: role, widget: object, hint: "Petit texte à gauche.", fields: [{label: "Français", name: fr, widget: string, hint: "Rôle en français."}, {label: "English", name: en, widget: string, hint: "Rôle en anglais."}]}
+              - {label: "Disponibilité", name: availability, widget: object, hint: "Texte du badge vert ou rouge.", fields: [{label: "Français", name: fr, widget: string, hint: "Disponibilité en français."}, {label: "English", name: en, widget: string, hint: "Disponibilité en anglais."}]}
+              - {label: "Afficher le badge de disponibilité", name: availabilityEnabled, widget: boolean, default: true, hint: "Désactivez pour masquer le badge sans supprimer le texte."}
+              - {label: "Ouvrir le menu", name: menu, widget: object, hint: "Texte pour l’accessibilité.", fields: [{label: "Français", name: fr, widget: string, hint: "Texte en français."}, {label: "English", name: en, widget: string, hint: "Texte en anglais."}]}
+              - {label: "Fermer le menu", name: close, widget: object, hint: "Texte pour l’accessibilité.", fields: [{label: "Français", name: fr, widget: string, hint: "Texte en français."}, {label: "English", name: en, widget: string, hint: "Texte en anglais."}]}
+          - label: "Titres des sections"
+            name: sections
+            widget: object
+            hint: "Les petits numéros et les titres de chaque partie de la page."
+            fields:
+              - label: "Projets choisis"
+                name: selected
+                widget: object
+                hint: "Section des trois projets en avant."
+                fields:
+                  - {label: "Numéro / titre", name: eyebrow, widget: object, hint: "Exemple 01 / Sélection.", fields: [{label: "Français", name: fr, widget: string, hint: "Texte en français."}, {label: "English", name: en, widget: string, hint: "Texte en anglais."}]}
+                  - {label: "Titre", name: title, widget: object, hint: "Gros titre de la section.", fields: [{label: "Français", name: fr, widget: string, hint: "Titre en français."}, {label: "English", name: en, widget: string, hint: "Titre en anglais."}]}
+                  - {label: "Lien Voir tous", name: viewAll, widget: object, hint: "Texte du lien vers l’archive.", fields: [{label: "Français", name: fr, widget: string, hint: "Texte en français."}, {label: "English", name: en, widget: string, hint: "Texte en anglais."}]}
+                  - {label: "Note", name: note, widget: object, hint: "Phrase sous le titre.", fields: [{label: "Français", name: fr, widget: string, hint: "Note en français."}, {label: "English", name: en, widget: string, hint: "Note en anglais."}]}
+              - label: "Lab 3D"
+                name: lab
+                widget: object
+                hint: "Section de la galerie 3D."
+                fields:
+                  - {label: "Numéro / titre", name: eyebrow, widget: object, hint: "Exemple 02 / Laboratoire.", fields: [{label: "Français", name: fr, widget: string, hint: "Texte en français."}, {label: "English", name: en, widget: string, hint: "Texte en anglais."}]}
+                  - {label: "Titre", name: title, widget: object, hint: "Gros titre de la section.", fields: [{label: "Français", name: fr, widget: string, hint: "Titre en français."}, {label: "English", name: en, widget: string, hint: "Titre en anglais."}]}
+                  - {label: "Description", name: description, widget: object, hint: "Texte d’introduction.", fields: [{label: "Français", name: fr, widget: text, hint: "Description en français."}, {label: "English", name: en, widget: text, hint: "Description en anglais."}]}
+                  - {label: "Glisser", name: drag, widget: object, hint: "Consigne sous la galerie.", fields: [{label: "Français", name: fr, widget: string, hint: "Consigne en français."}, {label: "English", name: en, widget: string, hint: "Consigne en anglais."}]}
+                  - {label: "Images", name: frames, widget: object, hint: "Légende des images extraites du rendu.", fields: [{label: "Français", name: fr, widget: string, hint: "Légende en français."}, {label: "English", name: en, widget: string, hint: "Légende en anglais."}]}
+              - label: "Formation"
+                name: education
+                widget: object
+                hint: "Titres de la partie parcours."
+                fields:
+                  - {label: "Numéro / titre", name: eyebrow, widget: object, hint: "Exemple 03 / Parcours.", fields: [{label: "Français", name: fr, widget: string, hint: "Texte en français."}, {label: "English", name: en, widget: string, hint: "Texte en anglais."}]}
+                  - {label: "Titre", name: title, widget: object, hint: "Gros titre de la section.", fields: [{label: "Français", name: fr, widget: string, hint: "Titre en français."}, {label: "English", name: en, widget: string, hint: "Titre en anglais."}]}
+                  - {label: "Formation", name: timeline, widget: object, hint: "Titre de la liste des diplômes.", fields: [{label: "Français", name: fr, widget: string, hint: "Texte en français."}, {label: "English", name: en, widget: string, hint: "Texte en anglais."}]}
+                  - {label: "Formations complémentaires", name: training, widget: object, hint: "Titre de la deuxième liste.", fields: [{label: "Français", name: fr, widget: string, hint: "Texte en français."}, {label: "English", name: en, widget: string, hint: "Texte en anglais."}]}
+              - label: "Expériences"
+                name: experience
+                widget: object
+                hint: "Titres de la partie stages et expériences."
+                fields:
+                  - {label: "Numéro / titre", name: eyebrow, widget: object, hint: "Exemple 04 / Terrain.", fields: [{label: "Français", name: fr, widget: string, hint: "Texte en français."}, {label: "English", name: en, widget: string, hint: "Texte en anglais."}]}
+                  - {label: "Titre", name: title, widget: object, hint: "Gros titre de la section.", fields: [{label: "Français", name: fr, widget: string, hint: "Titre en français."}, {label: "English", name: en, widget: string, hint: "Titre en anglais."}]}
+                  - {label: "Note", name: note, widget: object, hint: "Phrase sous le titre.", fields: [{label: "Français", name: fr, widget: string, hint: "Note en français."}, {label: "English", name: en, widget: string, hint: "Note en anglais."}]}
+              - label: "Méthode"
+                name: process
+                widget: object
+                hint: "Titres de la partie Comment je travaille."
+                fields:
+                  - {label: "Numéro / titre", name: eyebrow, widget: object, hint: "Exemple 05 / Méthode.", fields: [{label: "Français", name: fr, widget: string, hint: "Texte en français."}, {label: "English", name: en, widget: string, hint: "Texte en anglais."}]}
+                  - {label: "Titre", name: title, widget: object, hint: "Gros titre de la section.", fields: [{label: "Français", name: fr, widget: string, hint: "Titre en français."}, {label: "English", name: en, widget: string, hint: "Titre en anglais."}]}
+              - label: "Contact"
+                name: contact
+                widget: object
+                hint: "Tous les textes de la section contact."
+                fields:
+                  - {label: "Numéro / titre", name: eyebrow, widget: object, hint: "Exemple 07 / Contact.", fields: [{label: "Français", name: fr, widget: string, hint: "Texte en français."}, {label: "English", name: en, widget: string, hint: "Texte en anglais."}]}
+                  - {label: "Titre", name: title, widget: object, hint: "Gros titre de la section.", fields: [{label: "Français", name: fr, widget: string, hint: "Titre en français."}, {label: "English", name: en, widget: string, hint: "Titre en anglais."}]}
+                  - {label: "Introduction", name: intro, widget: object, hint: "Phrase d’accroche du contact.", fields: [{label: "Français", name: fr, widget: text, hint: "Texte en français."}, {label: "English", name: en, widget: text, hint: "Texte en anglais."}]}
+                  - {label: "Email", name: email, widget: object, hint: "Libellé Email.", fields: [{label: "Français", name: fr, widget: string, hint: "Libellé en français."}, {label: "English", name: en, widget: string, hint: "Libellé en anglais."}]}
+                  - {label: "Téléphone", name: phone, widget: object, hint: "Libellé Téléphone.", fields: [{label: "Français", name: fr, widget: string, hint: "Libellé en français."}, {label: "English", name: en, widget: string, hint: "Libellé en anglais."}]}
+                  - {label: "Localisation", name: location, widget: object, hint: "Libellé Localisation.", fields: [{label: "Français", name: fr, widget: string, hint: "Libellé en français."}, {label: "English", name: en, widget: string, hint: "Libellé en anglais."}]}
+                  - {label: "Votre nom", name: formName, widget: object, hint: "Libellé du champ nom.", fields: [{label: "Français", name: fr, widget: string, hint: "Libellé en français."}, {label: "English", name: en, widget: string, hint: "Libellé en anglais."}]}
+                  - {label: "Votre email", name: formEmail, widget: object, hint: "Libellé du champ email.", fields: [{label: "Français", name: fr, widget: string, hint: "Libellé en français."}, {label: "English", name: en, widget: string, hint: "Libellé en anglais."}]}
+                  - {label: "Votre message", name: formMessage, widget: object, hint: "Libellé du champ message.", fields: [{label: "Français", name: fr, widget: string, hint: "Libellé en français."}, {label: "English", name: en, widget: string, hint: "Libellé en anglais."}]}
+                  - {label: "Bouton Envoyer", name: formSend, widget: object, hint: "Texte du bouton.", fields: [{label: "Français", name: fr, widget: string, hint: "Texte en français."}, {label: "English", name: en, widget: string, hint: "Texte en anglais."}]}
+                  - {label: "Note sous le formulaire", name: formNote, widget: object, hint: "Précisez que le message part par email et n’est pas stocké.", fields: [{label: "Français", name: fr, widget: string, hint: "Texte en français."}, {label: "English", name: en, widget: string, hint: "Texte en anglais."}]}
+                  - {label: "Envoi en cours", name: formSending, widget: object, hint: "Affiché pendant l’envoi.", fields: [{label: "Français", name: fr, widget: string, hint: "Texte en français."}, {label: "English", name: en, widget: string, hint: "Texte en anglais."}]}
+                  - {label: "Message envoyé", name: formSuccess, widget: object, hint: "Confirmation affichée après un envoi réussi.", fields: [{label: "Français", name: fr, widget: string, hint: "Texte en français."}, {label: "English", name: en, widget: string, hint: "Texte en anglais."}]}
+                  - {label: "Erreur d’envoi", name: formError, widget: object, hint: "Affiché si le message n’a pas pu être envoyé.", fields: [{label: "Français", name: fr, widget: string, hint: "Texte en français."}, {label: "English", name: en, widget: string, hint: "Texte en anglais."}]}
+                  - {label: "Service indisponible", name: formFallback, widget: object, hint: "Affiché avant l’ouverture de l’application email.", fields: [{label: "Français", name: fr, widget: string, hint: "Texte en français."}, {label: "English", name: en, widget: string, hint: "Texte en anglais."}]}
+                  - {label: "Télécharger le CV", name: download, widget: object, hint: "Texte du bouton CV.", fields: [{label: "Français", name: fr, widget: string, hint: "Texte en français."}, {label: "English", name: en, widget: string, hint: "Texte en anglais."}]}
+                  - {label: "Réseaux", name: socialTitle, widget: object, hint: "Titre de la zone réseaux.", fields: [{label: "Français", name: fr, widget: string, hint: "Texte en français."}, {label: "English", name: en, widget: string, hint: "Texte en anglais."}]}
+                  - {label: "Note réseaux", name: socialNote, widget: object, hint: "Laissez vide si aucun lien n’est confirmé.", fields: [{label: "Français", name: fr, widget: string, hint: "Texte en français."}, {label: "English", name: en, widget: string, hint: "Texte en anglais."}]}
+                  - {label: "Au-delà de l’écran", name: beyond, widget: object, hint: "Petit titre personnel.", fields: [{label: "Français", name: fr, widget: string, hint: "Texte en français."}, {label: "English", name: en, widget: string, hint: "Texte en anglais."}]}
+                  - {label: "Détails personnels", name: beyondDetail, widget: object, hint: "Loisirs et centres d’intérêt.", fields: [{label: "Français", name: fr, widget: string, hint: "Texte en français."}, {label: "English", name: en, widget: string, hint: "Texte en anglais."}]}
+      - name: contact
+        label: "Coordonnées"
+        file: content/settings.json
+        fields:
+          - label: "Adresse email publique"
+            name: contact.email
+            widget: string
+            hint: "Adresse affichée et utilisée pour recevoir les messages."
+          - label: "Téléphone affiché"
+            name: contact.phone
+            widget: string
+            hint: "Numéro tel qu’il doit apparaître sur le site. Le lien tel: est généré automatiquement."
+          - label: "Localisation"
+            name: contact.location
+            widget: string
+            hint: "Ville et pays, par exemple Gabès, Tunisie."
+          - label: "Fichier CV"
+            name: contact.cv
+            widget: file
+            hint: "Uploadez un PDF sans date de naissance. Le CV public doit rester anonymisé."
+          - label: "Liens sociaux"
+            name: contact.socialLinks
+            widget: list
+            hint: "Ajoutez seulement des profils vérifiés. Laissez la liste vide si vous n’en avez pas."
+            field:
+              label: "Lien"
+              name: link
+              widget: object
+              hint: "Un réseau social par ligne."
+              fields:
+                - {label: "Nom du réseau", name: label, widget: string, hint: "Exemple GitHub ou LinkedIn."}
+                - {label: "URL complète", name: url, widget: string, hint: "Commence par https://."}
+      - name: seo
+        label: "SEO et partage"
+        file: content/settings.json
+        fields:
+          - label: "Titre de la page"
+            name: seo.ogTitle
+            widget: object
+            hint: "Titre vu dans les onglets et lors des partages."
+            fields:
+              - {label: "Français", name: fr, widget: string, hint: "Titre en français."}
+              - {label: "English", name: en, widget: string, hint: "Titre en anglais."}
+          - label: "Description"
+            name: seo.description
+            widget: object
+            hint: "Deux phrases maximum, affichées dans les résultats de recherche."
+            fields:
+              - {label: "Français", name: fr, widget: text, hint: "Description en français."}
+              - {label: "English", name: en, widget: text, hint: "Description en anglais."}
+          - label: "Description de partage"
+            name: seo.ogDescription
+            widget: object
+            hint: "Texte affiché quand le lien est partagé sur les réseaux."
+            fields:
+              - {label: "Français", name: fr, widget: text, hint: "Texte en français."}
+              - {label: "English", name: en, widget: text, hint: "Texte en anglais."}
+          - label: "Image de partage"
+            name: seo.ogImage
+            widget: image
+            hint: "Image 1200 × 630 px de préférence, au format WebP ou JPG."
+
+  - name: quote
+    label: "Citation"
+    files:
+      - name: quote
+        label: "Citation de la page d’accueil"
+        file: content/quote.json
+        fields:
+          - {label: "Numéro / titre", name: eyebrow, widget: object, hint: "Exemple 06 / Pensée.", fields: [{label: "Français", name: fr, widget: string, hint: "Texte en français."}, {label: "English", name: en, widget: string, hint: "Texte en anglais."}]}
+          - {label: "Texte de la citation", name: text, widget: object, hint: "Une phrase courte et personnelle.", fields: [{label: "Français", name: fr, widget: text, hint: "Citation en français."}, {label: "English", name: en, widget: text, hint: "Citation en anglais."}]}
+          - {label: "Signature", name: signature, widget: object, hint: "Par exemple Yassine.", fields: [{label: "Français", name: fr, widget: string, hint: "Signature en français."}, {label: "English", name: en, widget: string, hint: "Signature en anglais."}]}
+
+  - name: projects
+    label: "Projets"
+    folder: content/projects
+    format: json
+    extension: json
+    create: true
+    delete: true
+    identifier_field: slug
+    slug: "{{fields.slug}}"
+    slug_collision: reject
+    sortable_fields: ["year", "featured", "sortOrder"]
+    summary: "{{number}} — {{slug}} · {{thumbnail}}"
+    fields:
+      - {label: "Identifiant URL", name: slug, widget: string, pattern: ['^[a-z0-9-]+$', "Utilisez seulement des minuscules, des chiffres et des tirets."], hint: "Généré à partir du titre. Ne le changez pas sur un projet déjà publié, sinon son adresse change."}
+      - {label: "Numéro d’affichage", name: number, widget: string, hint: "Exemple 01. Sert à l’ordre visuel."}
+      - label: "Titre du projet"
+        name: title
+        widget: object
+        hint: "Le titre est utilisé comme identifiant dans la liste des projets."
+        fields:
+          - {label: "Français", name: fr, widget: string, hint: "Titre en français."}
+          - {label: "English", name: en, widget: string, hint: "Titre en anglais."}
+      - label: "Rôle"
+        name: role
+        widget: object
+        hint: "Votre rôle sur ce projet."
+        fields:
+          - {label: "Français", name: fr, widget: string, hint: "Rôle en français."}
+          - {label: "English", name: en, widget: string, hint: "Rôle en anglais."}
+      - label: "Résumé court"
+        name: excerpt
+        widget: object
+        hint: "Une phrase sur la carte du projet."
+        fields:
+          - {label: "Français", name: fr, widget: text, hint: "Résumé en français."}
+          - {label: "English", name: en, widget: text, hint: "Résumé en anglais."}
+      - label: "Description longue"
+        name: description
+        widget: object
+        hint: "Quelques phrases sur la fiche projet."
+        fields:
+          - {label: "Français", name: fr, widget: markdown, hint: "Description en français."}
+          - {label: "English", name: en, widget: markdown, hint: "Description en anglais."}
+      - {label: "Catégorie", name: category, widget: select, options: [{label: "Graphisme", value: graphic}, {label: "Motion", value: motion}, {label: "3D", value: "3d"}, {label: "XR & Jeux", value: xr}, {label: "Web", value: web}], hint: "Choisissez une seule catégorie pour les filtres."}
+      - {label: "Année", name: year, widget: string, pattern: ['^\\d{4}( — \\d{4})?$', "Format attendu 2026 ou 2025 — 2026."], hint: "Année ou période de réalisation."}
+      - label: "Outils utilisés"
+        name: tools
+        widget: list
+        hint: "Ajoutez un outil par ligne, seulement ceux réellement utilisés."
+        field: {label: "Outil", name: tool, widget: string, hint: "Exemple Blender."}
+      - {label: "Image de couverture", name: thumbnail, widget: image, hint: "Image 4:3 de préférence, WebP, 2400 px maximum."}
+      - label: "Galerie d’images"
+        name: gallery
+        widget: list
+        hint: "Ajoutez les images dans l’ordre d’affichage. WebP, 2400 px maximum."
+        field: {label: "Image", name: image, widget: image, hint: "Une image par ligne."}
+      - label: "Vidéo locale"
+        name: video
+        widget: object
+        hint: "Uniquement pour les petites boucles MP4/WebM de moins de 10 Mo."
+        fields:
+          - {label: "WebM", name: webm, widget: file, required: false, hint: "Version WebM, facultative."}
+          - {label: "MP4", name: mp4, widget: file, required: false, hint: "Version MP4, facultative."}
+          - {label: "Image d’attente", name: poster, widget: image, required: false, hint: "Image affichée avant le lancement de la vidéo."}
+      - {label: "Lien vidéo YouTube ou Vimeo", name: videoUrl, widget: string, required: false, pattern: ['^(https?://.*)?$', "Commence par https:// ou laissez vide."], hint: "Collez un lien YouTube/Vimeo au lieu d’uploader une grosse vidéo."}
+      - {label: "Fichier 3D GLB", name: glb, widget: file, required: false, hint: "Facultatif. Restez sous 15 Mo."}
+      - {label: "Lien du projet en ligne", name: liveUrl, widget: string, required: false, pattern: ['^(https?://.*)?$', "Commence par https:// ou laissez vide."], hint: "Uniquement si le lien a été vérifié."}
+      - {label: "À la une", name: featured, widget: boolean, hint: "Maximum 3 projets à la une sur la page d’accueil."}
+      - {label: "Ordre à la une", name: featuredOrder, widget: number, hint: "1, 2 ou 3 pour les projets à la une. 0 pour les autres."}
+      - {label: "Ordre dans l’archive", name: sortOrder, widget: number, hint: "Plus le nombre est petit, plus le projet apparaît tôt."}
+      - {label: "Brouillon", name: draft, widget: boolean, hint: "Une fois coché, le projet n’apparaît pas sur le site public."}
+      - {label: "À confirmer", name: todo, widget: boolean, required: false, hint: "Affiche un badge TODO en développement seulement. Ne décochez qu’après validation."}
+
+  - name: skills
+    label: "Compétences"
+    files:
+      - name: skills
+        label: "Groupes de compétences"
+        file: content/skills.json
+        fields:
+          - label: "Groupes"
+            name: groups
+            widget: list
+            hint: "Un groupe par domaine, avec la liste des outils."
+            field:
+              label: "Groupe"
+              name: group
+              widget: object
+              hint: "Exemple Web, Graphisme, Motion."
+              fields:
+                - label: "Nom du groupe"
+                  name: label
+                  widget: object
+                  hint: "Nom affiché dans l’onglet."
+                  fields:
+                    - {label: "Français", name: fr, widget: string, hint: "Nom en français."}
+                    - {label: "English", name: en, widget: string, hint: "Nom en anglais."}
+                - label: "Outils"
+                  name: items
+                  widget: list
+                  hint: "Un outil par ligne."
+                  field: {label: "Outil", name: item, widget: string, hint: "Exemple Adobe Photoshop."}
+
+  - name: education
+    label: "Formation"
+    files:
+      - name: education
+        label: "Diplômes et formations"
+        file: content/education.json
+        fields:
+          - label: "Diplômes"
+            name: items
+            widget: list
+            hint: "Liste des formations dans l’ordre chronologique inverse."
+            field: {label: "Formation", name: item, widget: object, hint: "Une formation par ligne.", fields: [{label: "Période", name: period, widget: string, hint: "Exemple 2025 — 2026."}, {label: "Titre", name: title, widget: object, hint: "Intitulé du diplôme.", fields: [{label: "Français", name: fr, widget: string, hint: "Titre en français."}, {label: "English", name: en, widget: string, hint: "Titre en anglais."}]}, {label: "Établissement", name: place, widget: string, hint: "Nom de l’école ou ville."}, {label: "Détail", name: detail, widget: object, hint: "Précision courte.", fields: [{label: "Français", name: fr, widget: string, hint: "Détail en français."}, {label: "English", name: en, widget: string, hint: "Détail en anglais."}]}]}
+          - label: "Formations complémentaires"
+            name: trainings
+            widget: list
+            hint: "Certifications et cours courts."
+            field: {label: "Formation", name: item, widget: object, hint: "Une formation par ligne.", fields: [{label: "Période", name: period, widget: string, hint: "Exemple 2024."}, {label: "Titre", name: title, widget: object, hint: "Intitulé.", fields: [{label: "Français", name: fr, widget: string, hint: "Titre en français."}, {label: "English", name: en, widget: string, hint: "Titre en anglais."}]}, {label: "Établissement", name: place, widget: string, required: false, hint: "Laissez vide si besoin."}, {label: "Détail", name: detail, widget: object, hint: "Précision courte.", fields: [{label: "Français", name: fr, widget: string, hint: "Détail en français."}, {label: "English", name: en, widget: string, hint: "Détail en anglais."}]}]}
+
+  - name: experience
+    label: "Expériences"
+    files:
+      - name: experience
+        label: "Stages et expériences"
+        file: content/experience.json
+        fields:
+          - label: "Expériences"
+            name: items
+            widget: list
+            hint: "Stages, bénévolat et missions, du plus récent au plus ancien."
+            field: {label: "Expérience", name: item, widget: object, hint: "Une expérience par ligne.", fields: [{label: "Période", name: period, widget: string, hint: "Exemple 2026 · 2 mois."}, {label: "Intitulé", name: title, widget: object, hint: "Exemple Stagiaire en design graphique.", fields: [{label: "Français", name: fr, widget: string, hint: "Intitulé en français."}, {label: "English", name: en, widget: string, hint: "Intitulé en anglais."}]}, {label: "Lieu", name: place, widget: string, hint: "Entreprise ou association."}, {label: "Description", name: detail, widget: object, hint: "Ce que vous avez fait.", fields: [{label: "Français", name: fr, widget: text, hint: "Description en français."}, {label: "English", name: en, widget: text, hint: "Description en anglais."}]}]}
+
+  - name: languages
+    label: "Langues"
+    files:
+      - name: languages
+        label: "Langues parlées"
+        file: content/languages.json
+        fields:
+          - label: "Langues"
+            name: items
+            widget: list
+            hint: "Quatre langues maximum recommandées."
+            field: {label: "Langue", name: item, widget: object, hint: "Une langue par ligne.", fields: [{label: "Nom", name: name, widget: object, hint: "Exemple Arabe.", fields: [{label: "Français", name: fr, widget: string, hint: "Nom en français."}, {label: "English", name: en, widget: string, hint: "Nom en anglais."}]}, {label: "Niveau", name: level, widget: object, hint: "Exemple Langue maternelle ou B1.", fields: [{label: "Français", name: fr, widget: string, hint: "Niveau en français."}, {label: "English", name: en, widget: string, hint: "Niveau en anglais."}]}, {label: "Niveau en pourcentage", name: value, widget: number, min: 0, max: 100, hint: "Nombre entier entre 0 et 100 pour la barre visuelle."}]}
+
+  - name: stats
+    label: "Chiffres clés"
+    files:
+      - name: stats
+        label: "Trois chiffres du hero"
+        file: content/stats.json
+        fields:
+          - label: "Chiffres"
+            name: items
+            widget: list
+            hint: "Trois chiffres seulement, dans l’ordre des libellés définis dans la page d’accueil."
+            field: {label: "Chiffre", name: item, widget: object, hint: "Un chiffre par ligne.", fields: [{label: "Valeur", name: value, widget: number, hint: "Nombre entier affiché et animé."}, {label: "Index du libellé", name: labelIndex, widget: number, min: 0, max: 2, hint: "0 pour le premier libellé, 1 pour le deuxième, 2 pour le troisième."}]}
+
+  - name: process
+    label: "Méthode de travail"
+    files:
+      - name: process
+        label: "Étapes du processus"
+        file: content/process.json
+        fields:
+          - label: "Étapes"
+            name: items
+            widget: list
+            hint: "Cinq étapes maximum, affichées de gauche à droite."
+            field: {label: "Étape", name: item, widget: object, hint: "Une étape par ligne.", fields: [{label: "Numéro", name: number, widget: string, hint: "Exemple 01."}, {label: "Icône", name: icon, widget: select, options: [briefcase, sparkles, pen, code, send], hint: "Choisissez une icône parmi celles disponibles."}, {label: "Titre", name: title, widget: object, hint: "Exemple Brief.", fields: [{label: "Français", name: fr, widget: string, hint: "Titre en français."}, {label: "English", name: en, widget: string, hint: "Titre en anglais."}]}, {label: "Détail", name: detail, widget: object, hint: "Une phrase courte.", fields: [{label: "Français", name: fr, widget: string, hint: "Détail en français."}, {label: "English", name: en, widget: string, hint: "Détail en anglais."}]}]}

@@ -1,6 +1,6 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react'
 import type { ReactNode } from 'react'
-import { i18n, localeContent, type Locale, type LocaleContent } from '../lib/content'
+import { defaultLanguage, i18n, localeContent, type Locale, type LocaleContent } from '../lib/content'
 
 interface LanguageContextValue {
   locale: Locale
@@ -20,7 +20,7 @@ function initialLocale(): Locale {
   if (fromUrl && SUPPORTED.includes(fromUrl)) return fromUrl
   const stored = window.localStorage.getItem(STORAGE_KEY) as Locale | null
   if (stored && SUPPORTED.includes(stored)) return stored
-  return 'fr' // French is the default.
+  return defaultLanguage
 }
 
 export function LanguageProvider({ children }: { children: ReactNode }) {

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useLanguage } from '../i18n/LanguageContext'
+import { contact } from '../lib/content'
 import { Sparkle } from './Sparkle'
 
 export default function Footer() {
@@ -18,8 +19,8 @@ export default function Footer() {
           </p>
         </div>
         <div className="flex items-center gap-6">
-          <a href="mailto:tbibyassine03@gmail.com" className="link-underline">
-            Email ↗
+          <a href={`mailto:${contact.email}`} className="link-underline">
+            {content.sections.contact.email} ↗
           </a>
           <a href="#top" className="link-underline">
             {content.footer.top} ↑

@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
 import { Sparkle } from './Sparkle'
 import { useLanguage } from '../i18n/LanguageContext'
+import { availabilityEnabled } from '../lib/content'
 
 const sections = [
   { id: 'top', key: 'home' },
@@ -45,10 +46,12 @@ export default function Nav() {
         </Link>
 
         <div className="flex items-center gap-3 md:gap-6">
-          <span className="hidden items-center gap-2 rounded-full border border-white/15 px-3 py-1.5 text-[9px] font-semibold uppercase tracking-[0.16em] text-bone-dim sm:inline-flex md:text-[10px]">
-            <Sparkle className="h-3 w-3 text-crimson" />
-            {content.topbar.availability}
-          </span>
+          {availabilityEnabled && (
+            <span className="hidden items-center gap-2 rounded-full border border-white/15 px-3 py-1.5 text-[9px] font-semibold uppercase tracking-[0.16em] text-bone-dim sm:inline-flex md:text-[10px]">
+              <Sparkle className="h-3 w-3 text-crimson" />
+              {content.topbar.availability}
+            </span>
+          )}
           <button
             type="button"
             onClick={toggle}
