@@ -33,10 +33,13 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     window.localStorage.setItem(STORAGE_KEY, locale)
 
     const current = i18n[locale === 'fr' ? 'fr' : 'en']
-    document.title = `${current.meta.ogTitle}`
+    document.title = current.meta.ogTitle
     document.querySelector('meta[name="description"]')?.setAttribute('content', current.meta.description)
+    document.querySelector('meta[property="og:title"]')?.setAttribute('content', current.meta.ogTitle)
     document.querySelector('meta[property="og:description"]')?.setAttribute('content', current.meta.ogDescription)
     document.querySelector('meta[property="og:locale"]')?.setAttribute('content', locale === 'fr' ? 'fr_FR' : 'en_US')
+    document.querySelector('meta[name="twitter:title"]')?.setAttribute('content', current.meta.ogTitle)
+    document.querySelector('meta[name="twitter:description"]')?.setAttribute('content', current.meta.ogDescription)
   }, [locale])
 
   const setLocale = useCallback((next: Locale) => setLocaleState(next), [])
