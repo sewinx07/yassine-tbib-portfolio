@@ -196,8 +196,24 @@
         "en": "Send message"
       },
       "formNote": {
-        "fr": "Le formulaire ouvre votre application email.",
-        "en": "The form opens your email app."
+        "fr": "Votre message est envoyé par email. Il n’est pas stocké sur ce site.",
+        "en": "Your message is delivered by email. It is not stored on this site."
+      },
+      "formSending": {
+        "fr": "Envoi en cours…",
+        "en": "Sending…"
+      },
+      "formSuccess": {
+        "fr": "Message envoyé. Je vous répondrai dès que possible.",
+        "en": "Message sent. I will get back to you as soon as possible."
+      },
+      "formError": {
+        "fr": "L’envoi a échoué. Réessayez ou utilisez le lien email ci-dessus.",
+        "en": "Sending failed. Please try again or use the email link above."
+      },
+      "formFallback": {
+        "fr": "Le service d’envoi est indisponible. Votre application email va s’ouvrir.",
+        "en": "The delivery service is unavailable. Your email app will open instead."
       },
       "download": {
         "fr": "Télécharger le CV",

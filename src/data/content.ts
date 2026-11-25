@@ -89,6 +89,10 @@ export interface LocaleContent {
       formMessage: string
       formSend: string
       formNote: string
+      formSending: string
+      formSuccess: string
+      formError: string
+      formFallback: string
       download: string
       socialTitle: string
       socialNote: string
@@ -197,7 +201,11 @@ const fr: LocaleContent = {
       formEmail: 'Votre email',
       formMessage: 'Votre message',
       formSend: 'Envoyer le message',
-      formNote: 'Le formulaire ouvre votre application email.',
+      formNote: 'Votre message est envoyé par email. Il n’est pas stocké sur ce site.',
+      formSending: 'Envoi en cours…',
+      formSuccess: 'Message envoyé. Je vous répondrai dès que possible.',
+      formError: 'L’envoi a échoué. Réessayez ou utilisez le lien email ci-dessus.',
+      formFallback: 'Le service d’envoi est indisponible. Votre application email va s’ouvrir.',
       download: 'Télécharger le CV',
       socialTitle: 'Réseaux',
       socialNote: 'TODO: confirm — aucun lien social vérifié trouvé dans les dossiers.',
@@ -321,7 +329,11 @@ const en: LocaleContent = {
       formEmail: 'Your email',
       formMessage: 'Your message',
       formSend: 'Send message',
-      formNote: 'The form opens your email app.',
+      formNote: 'Your message is delivered by email. It is not stored on this site.',
+      formSending: 'Sending…',
+      formSuccess: 'Message sent. I will get back to you as soon as possible.',
+      formError: 'Sending failed. Please try again or use the email link above.',
+      formFallback: 'The delivery service is unavailable. Your email app will open instead.',
       download: 'Download CV',
       socialTitle: 'Social',
       socialNote: 'TODO: confirm — no verified social links found in the folders.',

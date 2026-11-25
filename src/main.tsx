@@ -14,12 +14,14 @@ import '@fontsource/mrs-saint-delafield/latin-400.css'
 import './index.css'
 import App from './App'
 import { LanguageProvider } from './i18n/LanguageContext'
+import Analytics from './components/Analytics'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <BrowserRouter>
       <LanguageProvider>
         <App />
+        <Analytics />
       </LanguageProvider>
     </BrowserRouter>
   </React.StrictMode>,

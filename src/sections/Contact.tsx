@@ -1,4 +1,4 @@
-import { lazy, Suspense, useState } from 'react'
+import { lazy, Suspense, useRef, useState } from 'react'
 import type { FormEvent } from 'react'
 import { ArrowDownToLine, Mail, MapPin, Phone } from 'lucide-react'
 import SectionHeading from '../components/SectionHeading'
@@ -8,18 +8,53 @@ import { contact } from '../lib/content'
 import { useLanguage } from '../i18n/LanguageContext'
 import Magnetic from '../components/Magnetic'
 
+type Status = 'idle' | 'sending' | 'sent' | 'fallback'
+
 export default function Contact() {
   const { content, locale } = useLanguage()
   const c = content.sections.contact
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
+  const [website, setWebsite] = useState('')
+  const [status, setStatus] = useState<Status>('idle')
+  const startedAt = useRef(new Date().toISOString())
 
-  const send = (event: FormEvent) => {
-    event.preventDefault()
+  const openEmailApp = () => {
     const subject = encodeURIComponent(`Portfolio — ${name || 'Contact'}`)
     const body = encodeURIComponent(`${message}\n\n${email}`)
     window.location.href = `mailto:${contact.email}?subject=${subject}&body=${body}`
+  }
+
+  const send = async (event: FormEvent) => {
+    event.preventDefault()
+    setStatus('sending')
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, message, website, startedAt: startedAt.current }),
+      })
+      const data = (await response.json().catch(() => ({}))) as { ok?: boolean; code?: string }
+      if (!response.ok || !data.ok) {
+        if (data.code === 'contact_not_configured' || response.status === 404 || response.status === 405) {
+          setStatus('fallback')
+          openEmailApp()
+          return
+        }
+        throw new Error('delivery failed')
+      }
+      setName('')
+      setEmail('')
+      setMessage('')
+      setWebsite('')
+      startedAt.current = new Date().toISOString()
+      setStatus('sent')
+    } catch {
+      setStatus('fallback')
+      openEmailApp()
+    }
   }
 
   return (
@@ -86,7 +121,8 @@ export default function Contact() {
                   required
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="mt-2 w-full border-b border-white/20 bg-transparent py-3 text-sm text-bone outline-none transition-colors focus:border-crimson"
+                  disabled={status === 'sending'}
+                  className="mt-2 w-full border-b border-white/20 bg-transparent py-3 text-sm text-bone outline-none transition-colors focus:border-crimson disabled:opacity-50"
                   placeholder={c.formName}
                 />
               </label>
@@ -97,7 +133,8 @@ export default function Contact() {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="mt-2 w-full border-b border-white/20 bg-transparent py-3 text-sm text-bone outline-none transition-colors focus:border-crimson"
+                  disabled={status === 'sending'}
+                  className="mt-2 w-full border-b border-white/20 bg-transparent py-3 text-sm text-bone outline-none transition-colors focus:border-crimson disabled:opacity-50"
                   placeholder={c.formEmail}
                 />
               </label>
@@ -108,17 +145,38 @@ export default function Contact() {
                   rows={4}
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
-                  className="mt-2 w-full resize-none border-b border-white/20 bg-transparent py-3 text-sm text-bone outline-none transition-colors focus:border-crimson"
+                  disabled={status === 'sending'}
+                  className="mt-2 w-full resize-none border-b border-white/20 bg-transparent py-3 text-sm text-bone outline-none transition-colors focus:border-crimson disabled:opacity-50"
                   placeholder={c.formMessage}
                 />
               </label>
+              <div className="absolute -left-[9999px]" aria-hidden="true">
+                <label htmlFor="contact-website">Website</label>
+                <input
+                  id="contact-website"
+                  name="website"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  value={website}
+                  onChange={(e) => setWebsite(e.target.value)}
+                />
+              </div>
               <button
                 type="submit"
-                className="mt-8 w-full rounded-full bg-crimson py-4 text-[11px] font-bold uppercase tracking-editorial text-white transition-colors hover:bg-crimson-bright"
+                disabled={status === 'sending'}
+                className="mt-8 w-full rounded-full bg-crimson py-4 text-[11px] font-bold uppercase tracking-editorial text-white transition-colors hover:bg-crimson-bright disabled:cursor-wait disabled:opacity-70"
               >
-                {c.formSend}
+                {status === 'sending' ? c.formSending : c.formSend}
               </button>
-              <p className="mt-4 text-center text-[10px] text-bone-dim/70">{c.formNote}</p>
+              <p className="mt-4 text-center text-[10px] text-bone-dim/70" aria-live="polite">
+                {status === 'sent'
+                  ? c.formSuccess
+                  : status === 'fallback'
+                    ? c.formFallback
+                    : status === 'sending'
+                      ? c.formSending
+                      : c.formNote}
+              </p>
             </form>
           </div>
         </div>
