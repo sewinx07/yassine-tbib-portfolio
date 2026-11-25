@@ -1,5 +1,6 @@
 {
   "defaultLanguage": "fr",
+  "hero_portrait": "/assets/portrait/portrait.webp",
   "hero": {
     "greeting": {
       "fr": "Bonjour, je suis",

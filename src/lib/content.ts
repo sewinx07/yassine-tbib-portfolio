@@ -50,6 +50,7 @@ type ContactSection = LocalizedMap<
 
 type Settings = {
   defaultLanguage: Locale
+  hero_portrait: string
   hero: HeroSettings
   topbar: LocalizedMap<'role' | 'availability' | 'menu' | 'close'> & { availabilityEnabled: boolean }
   sections: {
@@ -247,6 +248,7 @@ export const i18n: Record<'fr' | 'en', LocaleContent> = {
 }
 
 export const defaultLanguage: Locale = settings.defaultLanguage
+export const heroPortrait = settings.hero_portrait
 export const availabilityEnabled = settings.topbar.availabilityEnabled
 export const seoImage = settings.seo.ogImage
 

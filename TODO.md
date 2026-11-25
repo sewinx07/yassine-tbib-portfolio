@@ -2,9 +2,10 @@
 
 Everything below is a real gap in the source material, not an oversight. Development builds show a small `TODO: confirm` badge on affected cards.
 
+Resolved: a new 1085 × 1449 portrait source was processed with `npm run portrait -- new-img.png`; the previous assets remain in `public/assets/_archive/` for rollback. A still larger original (>1600 px) would improve hair detail.
+
 ## Blocked by missing media
 
-1. **High-resolution portrait.** Current asset is a 598 × 798 WhatsApp image (same photo as the CV). Replace `public/assets/portrait/portrait.webp` and regenerate `portrait-depth.webp` + `hero-og.jpg` when a larger original is available.
 2. **Motion exports.** Ten `.aep` projects exist (`projeyat/projeyat/after effect/`), but no MP4s. The Motion card uses a generated placeholder. Add real renders/stills to `public/assets/projects/` and update `motion-studies` in `src/data/content.ts`.
 3. **3D model export.** `.blend` and `.skb` files exist but no GLB/OBJ/FBX. The Lab therefore uses real video frames instead of an orbit viewer. Export a GLB to add a true interactive model.
 4. **Thumbnails for individual logos/posters.** Some `.ai` files only expose vector previews; the generated WebP cards are honest but not pixel-perfect. Replace with rendered exports if available.
@@ -24,7 +25,7 @@ Everything below is a real gap in the source material, not an oversight. Develop
 12. Set `SITE_URL` and `GITHUB_REPO` in Vercel so generated `index.html`, `config.yml` and `sitemap.xml` use the final origin.
 13. Create the GitHub OAuth App and Resend key, then verify `/api/auth`, `/api/callback` and `/api/contact` on the deployed domain.
 14. Run Lighthouse on the deployed URL and tune if needed (target > 85).
-15. Optionally add AVIF variants alongside WebP for supported browsers.
+15. Portrait AVIF variants are generated alongside WebP; optionally add AVIF variants for the remaining project images too.
 16. Initialize a remote and push the git repository — the repo was initialized locally only. `npx vercel build` also requires an authenticated Vercel CLI session.
 
 ## Privacy

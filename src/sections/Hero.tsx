@@ -7,7 +7,7 @@ import { useLanguage } from '../i18n/LanguageContext'
 import { usePointer } from '../hooks/usePointer'
 import { useReducedMotion } from '../hooks/useReducedMotion'
 import { useCountUp } from '../hooks/useMotionSystem'
-import { stats } from '../lib/content'
+import { heroPortrait, stats } from '../lib/content'
 
 function Stat({ value, label, index }: { value: number; label: string; index: number }) {
   const ref = useRef<HTMLSpanElement>(null)
@@ -60,7 +60,7 @@ function Portrait() {
       />
       <img
         ref={photo}
-        src="/assets/portrait/portrait.webp"
+        src={heroPortrait}
         alt="Portrait de Yassine Tbib"
         className="absolute inset-0 h-full w-full object-contain object-bottom drop-shadow-[0_30px_60px_rgba(0,0,0,0.75)]"
       />

@@ -9,6 +9,7 @@ const timeline = z.object({ period: z.string(), title: localized, place: z.strin
 
 const settingsSchema = z.object({
   defaultLanguage: z.enum(['fr', 'en', 'ar']),
+  hero_portrait: z.string().startsWith('/assets/'),
   hero: z.object({
     greeting: localized,
     firstName: localized,

@@ -75,6 +75,7 @@ function buildDefaultsTree(data) {
 
   const settings = {
     defaultLanguage: 'fr',
+    hero_portrait: data.heroPortrait,
     hero: localizeSubset(data.i18n.fr.hero, data.i18n.en.hero, heroKeys),
     topbar: {
       ...localizeSubset(data.i18n.fr.topbar, data.i18n.en.topbar, topbarKeys),

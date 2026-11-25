@@ -38,6 +38,8 @@ Un projet marqué **Brouillon** est visible en prévisualisation et en local, ma
 | **Projets** | Toutes les fiches projet, avec filtres, galerie, vidéo et ordre d’affichage. |
 | **Compétences / Formation / Expériences / Langues / Chiffres clés / Méthode** | Les listes et les textes des sections correspondantes. |
 
+Le champ **Portrait du hero** (`hero_portrait`) pointe vers le portrait détouré. Ne le remplacez pas par un simple upload : le détourage, la carte de profondeur et l’image Open Graph doivent être régénérés ensemble avec `npm run portrait -- <photo>` (voir le README). Un upload direct casserait le parallaxe et l’alignement avec le grand texte.
+
 Chaque texte bilingual possède un champ **Français** et un champ **English**. Renseignez toujours les deux : l’anglais est traduit et le site bascule complètement d’une langue à l’autre. Le champ arabe est prévu dans le modèle mais l’interface publique n’est pas encore finalisée en arabe.
 
 ## Projets à la une

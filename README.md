@@ -42,8 +42,8 @@ Generated assets are committed in `public/assets/`. The originals are never modi
 
 | Asset | Origin |
 |---|---|
-| `portrait/portrait.webp`, `portrait-depth.webp` | `WhatsApp Image 2026-06-30 at 10.43.27.jpeg` (verified as the same photo as the CV portrait), background removed with rembg, upscaled to 1196 × 1596, depth map derived from the cutout alpha |
-| `hero-og.jpg` | composed from the cutout portrait and the palette |
+| `portrait/portrait.webp`, `portrait-depth.webp` | new source photo processed by `npm run portrait -- <path>` (rembg cutout + MiDaS depth), 1196 × 1596, same framing as the original cutout |
+| `hero-og.jpg` | recomposed from the current cutout over the dark/crimson background |
 | `projects/kelma-*.webp` | 4 real KELMA 216 Android screenshots |
 | `projects/aljazira-*.webp` | pages from the 16-page AL Jazira brand charter PDF |
 | `projects/jazira-3d-*.webp` | real frames from `YASSINNEE.mp4` (1920 × 1080, 60 fps, 60 s) |
@@ -53,6 +53,15 @@ Generated assets are committed in `public/assets/`. The originals are never modi
 | `projects/photo-retouch.webp`, `gabes-city.webp` | pages from the photography report |
 | `projects/motion-placeholder.webp` | generated placeholder — the 10 After Effects projects have no exported renders yet |
 | `cv-yassine-tbib.pdf` | redacted copy of the CV (DOB removed) |
+
+### Replacing the hero portrait
+
+```bash
+# Python 3 with: pip install rembg onnxruntime pillow numpy opencv-python scipy
+npm run portrait -- new-img.png
+```
+
+The script removes the background (rembg / `isnet-general-use` by default), aligns the head to the existing cutout's framing, despills and grades the edges, generates a MiDaS depth map, writes WebP + AVIF variants at 1x/2x, and recomposes `hero-og.jpg`. Previous published files are copied to `public/assets/_archive/` before being replaced; the source photo is never modified. First run downloads the models (~180 MB rembg + ~64 MB MiDaS) into the user cache; later runs are offline. Override the rembg model with `PORTRAIT_REMBG_MODEL` if needed. The public path is centralised in `content/settings.json` → `hero_portrait` (also editable in the CMS).
 
 ## Content admin
 

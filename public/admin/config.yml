@@ -53,6 +53,10 @@ collections:
                   fields:
                     - {label: "Français", name: fr, widget: string, hint: "Libellé en français."}
                     - {label: "English", name: en, widget: string, hint: "Libellé en anglais."}
+          - label: "Portrait du hero"
+            name: hero_portrait
+            widget: image
+            hint: "Chemin du portrait détouré. Ne remplacez pas ce fichier par un simple upload : utilisez npm run portrait -- <photo> pour régénérer le détourage, la carte de profondeur et l’image Open Graph."
           - label: "Bandeau du haut"
             name: topbar
             widget: object
