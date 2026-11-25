@@ -2,7 +2,7 @@
 
 Premium dark editorial portfolio built with React 18, Vite 5, TypeScript, Tailwind CSS, Three.js (`@react-three/fiber` / `drei`), GSAP + ScrollTrigger and Lenis.
 
-French is the default language; the English translation is complete. The content layer is typed for a future Arabic RTL locale.
+French is the default language; the English translation is complete. The content layer is typed for a future Arabic RTL locale. Content is edited in a Git-backed Decap CMS admin and injected into the static build at compile time.
 
 ## Run locally
 
@@ -26,13 +26,15 @@ npm run typecheck
 
 ## Source of truth
 
-All copy lives in [`src/data/content.ts`](src/data/content.ts). Nothing on the site is invented:
+Editorial content lives in [`content/`](content) as bilingual JSON (`{ fr, en, ar? }`). [`src/data/content.ts`](src/data/content.ts) remains the original typed source and automatic fallback, but the site consumes the typed loader in [`src/lib/content.ts`](src/lib/content.ts). Nothing on the site is invented:
 
 - biography, education, experience, skills and languages come from `CV Professionnel Moderne Gris (1).pdf`;
 - project facts come from the local folders `projeyat/`, `kelma-216-main/`, `mon_projet/` and the PDF reports inside them;
 - the date of birth in the original CV is **never rendered**. The downloadable PDF at `public/assets/cv-yassine-tbib.pdf` is a redacted copy; the original file is untouched.
 
 Descriptions and role wording were inferred from filenames, README files and reports. They are marked with `todo: true` in the data model and with a `TODO: confirm` badge in development builds only.
+
+`npm run build` validates every JSON file with Zod at build time (no validation library in the public bundle), regenerates `public/admin/config.yml`, `public/sitemap.xml` and `index.html`, then builds the site. Draft projects are included only in development and Vercel preview builds.
 
 ## Asset pipeline
 
@@ -52,17 +54,43 @@ Generated assets are committed in `public/assets/`. The originals are never modi
 | `projects/motion-placeholder.webp` | generated placeholder — the 10 After Effects projects have no exported renders yet |
 | `cv-yassine-tbib.pdf` | redacted copy of the CV (DOB removed) |
 
+## Content admin
+
+The editorial panel is a standalone static page at `/admin`. It loads Decap CMS from a CDN and shares **zero** code or bundle weight with the public React app. GitHub is the backend with editorial workflow: a save opens a draft PR, publishing merges it to `main`, and Vercel builds each PR as a preview deployment.
+
+```bash
+# First migration (already done; only needed if content.ts changed)
+npm run migrate:content
+
+# Local admin with the local Git backend (no OAuth needed)
+npm run cms:local
+# then open http://localhost:5173/admin/
+
+# Regenerate the production admin config/sitemap/index from env vars
+npm run prepare:admin
+```
+
+Copy `.env.example` to `.env.local` for local checks. Required build/deploy variables are `SITE_URL`, `GITHUB_REPO`, `OAUTH_GITHUB_CLIENT_ID`, `OAUTH_GITHUB_CLIENT_SECRET`, `RESEND_API_KEY`, `CONTACT_TO_EMAIL` and `CONTACT_FROM_EMAIL`; `UPSTASH_REDIS_REST_URL` / `UPSTASH_REDIS_REST_TOKEN` are optional. Secrets are used only by `api/*` functions and are never written to `dist/`.
+
+Edit [`admin/config.template.yml`](admin/config.template.yml), never the generated `public/admin/config.yml`. The French editor guide is in [`ADMIN_GUIDE.md`](ADMIN_GUIDE.md); deployment and OAuth setup are in [`DEPLOY.md`](DEPLOY.md).
+
 ## Structure
 
 ```
+content/                 canonical bilingual JSON for the CMS
+admin/config.template.yml  editable Decap schema (FR labels and hints)
+api/                     Vercel functions: OAuth proxy + contact delivery
+scripts/                 content migration, validation and file generation
 src/
-  data/content.ts        all bilingual copy, projects, timelines, skills, contact
+  data/content.ts        original typed source + build-time fallback
+  lib/content.ts         typed build-time loader used by the site
   i18n/                  language provider (FR default, EN, AR-ready RTL)
   hooks/                 reduced motion, pointer, Lenis/GSAP reveal system
   three/                 lazy-loaded R3F scenes (hero crystal, contact object)
   components/            nav, footer, loader, cursor, cards, shared UI
   sections/              home page sections
   pages/                 home, archive, project detail, 404
+public/admin/            generated config.yml + standalone Decap entry
 public/assets/           optimized WebP/AVIF-ready exports
 ```
 
@@ -75,7 +103,9 @@ public/assets/           optimized WebP/AVIF-ready exports
 
 ## Deployment
 
-`vercel.json` and `public/_redirects` rewrite unknown paths to `index.html` for client-side routing. Set the final `og:image` absolute URL and confirm social links before going live — see [`TODO.md`](TODO.md).
+Deploy on Vercel with Node 20 (`.nvmrc`). `vercel.json` rewrites unknown paths to `index.html` while excluding `/admin/*`, `/api/*` and static assets, and sets security headers plus cache rules. See [`DEPLOY.md`](DEPLOY.md) for the OAuth app, Resend, optional Upstash and preview/rollback workflow. Confirm the final `og:image` URL and social links before going live — see [`TODO.md`](TODO.md).
+
+Vercel Web Analytics is dynamically imported in production only. Speed Insights is intentionally optional and not enabled by default.
 
 ## Known TODOs
 
