@@ -1,0 +1,39 @@
+{
+  "slug": "photo-retouch",
+  "number": "09",
+  "category": "graphic",
+  "year": "2025",
+  "tools": [
+    "Adobe Photoshop",
+    "Canon EOS 4000D"
+  ],
+  "role": {
+    "fr": "Membre d’une équipe de quatre étudiants",
+    "en": "Member of a four-student team"
+  },
+  "title": {
+    "fr": "Prise de vue & retouche",
+    "en": "Photography & retouching"
+  },
+  "excerpt": {
+    "fr": "Séance photo au reflex, retouche sous Photoshop et présentation du sud tunisien.",
+    "en": "DSLR photo shoot, Photoshop retouching and a presentation of southern Tunisia."
+  },
+  "description": {
+    "fr": "Travail d’équipe en cours de prise de vue : réglages Canon EOS 4000D, retouche Photoshop / Camera Raw et une présentation sur Gabès et le sud tunisien.",
+    "en": "Teamwork for a photography class: Canon EOS 4000D settings, Photoshop / Camera Raw retouching and a presentation about Gabès and southern Tunisia."
+  },
+  "thumbnail": "/assets/projects/photo-retouch.webp",
+  "gallery": [
+    "/assets/projects/photo-retouch.webp",
+    "/assets/projects/gabes-city.webp"
+  ],
+  "featured": false,
+  "todo": true,
+  "featuredOrder": 0,
+  "sortOrder": 9,
+  "draft": false,
+  "videoUrl": "",
+  "glb": "",
+  "liveUrl": ""
+}

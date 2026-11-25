@@ -1,0 +1,46 @@
+{
+  "slug": "jazira-3d",
+  "number": "03",
+  "category": "3d",
+  "year": "2026",
+  "tools": [
+    "Blender",
+    "SketchUp"
+  ],
+  "role": {
+    "fr": "Artiste 3D",
+    "en": "3D artist"
+  },
+  "title": {
+    "fr": "Jazira — Monde 3D",
+    "en": "Jazira — 3D world"
+  },
+  "excerpt": {
+    "fr": "Scènes et modèles 3D explorés sous Blender et SketchUp, puis rendus en animation.",
+    "en": "3D scenes and models explored in Blender and SketchUp, then rendered as an animation."
+  },
+  "description": {
+    "fr": "Deux scènes Blender et un modèle SketchUp, accompagnés d’un rendu de 60 secondes en 1920 × 1080 à 60 images par seconde.",
+    "en": "Two Blender scenes and a SketchUp model, accompanied by a 60-second 1920 × 1080 render at 60 frames per second."
+  },
+  "thumbnail": "/assets/projects/jazira-3d-01.webp",
+  "gallery": [
+    "/assets/projects/jazira-3d-01.webp",
+    "/assets/projects/jazira-3d-02.webp",
+    "/assets/projects/jazira-3d-03.webp",
+    "/assets/projects/jazira-3d-04.webp"
+  ],
+  "video": {
+    "webm": "/assets/video/jazira-preview.webm",
+    "mp4": "/assets/video/jazira-preview.mp4",
+    "poster": "/assets/projects/jazira-3d-01.webp"
+  },
+  "featured": true,
+  "todo": true,
+  "featuredOrder": 3,
+  "sortOrder": 3,
+  "draft": false,
+  "videoUrl": "",
+  "glb": "",
+  "liveUrl": ""
+}

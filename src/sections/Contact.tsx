@@ -4,7 +4,7 @@ import { ArrowDownToLine, Mail, MapPin, Phone } from 'lucide-react'
 import SectionHeading from '../components/SectionHeading'
 const ContactObject = lazy(() => import('../three/ContactObject'))
 import TodoBadge from '../components/TodoBadge'
-import { contact } from '../data/content'
+import { contact } from '../lib/content'
 import { useLanguage } from '../i18n/LanguageContext'
 import Magnetic from '../components/Magnetic'
 

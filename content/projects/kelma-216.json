@@ -1,0 +1,43 @@
+{
+  "slug": "kelma-216",
+  "number": "01",
+  "category": "xr",
+  "year": "2026",
+  "tools": [
+    "Kotlin",
+    "Jetpack Compose",
+    "Android Studio",
+    "Material 3"
+  ],
+  "role": {
+    "fr": "Concepteur et développeur",
+    "en": "Designer & developer"
+  },
+  "title": {
+    "fr": "KELMA 216 — Le jeu des mots tunisiens",
+    "en": "KELMA 216 — The Tunisian word game"
+  },
+  "excerpt": {
+    "fr": "Un jeu de mots android : 24 gouvernorats, 216 mots à découvrir à partir de photos.",
+    "en": "An Android word game: 24 governorates, 216 words to uncover from photographs."
+  },
+  "description": {
+    "fr": "Le jouer compose chaque réponse avec des tuiles de lettres, gagne des pièces, achète des indices et débloque progressivement la carte de la Tunisie. La progression est sauvegardée localement. 216 énigmes sont intégrées ; 134 photos d'indice sont présentes, les autres proposent une devinette texte.",
+    "en": "Players build each answer from letter tiles, earn coins, buy hints and progressively unlock the map of Tunisia. Progress is saved locally. All 216 puzzles are integrated; 134 photo hints are included and the rest use a text riddle."
+  },
+  "thumbnail": "/assets/projects/kelma-home.webp",
+  "gallery": [
+    "/assets/projects/kelma-home.webp",
+    "/assets/projects/kelma-map.webp",
+    "/assets/projects/kelma-puzzle.webp",
+    "/assets/projects/kelma-profile.webp"
+  ],
+  "featured": true,
+  "todo": true,
+  "featuredOrder": 1,
+  "sortOrder": 1,
+  "draft": false,
+  "videoUrl": "",
+  "glb": "",
+  "liveUrl": ""
+}

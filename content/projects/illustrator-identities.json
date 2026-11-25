@@ -1,0 +1,39 @@
+{
+  "slug": "illustrator-identities",
+  "number": "07",
+  "category": "graphic",
+  "year": "2025",
+  "tools": [
+    "Adobe Illustrator"
+  ],
+  "role": {
+    "fr": "Designer graphique",
+    "en": "Graphic designer"
+  },
+  "title": {
+    "fr": "Logos & affiches",
+    "en": "Logos & posters"
+  },
+  "excerpt": {
+    "fr": "Identités et affiches vectorielles : Le Fondant Ba7cha, Kross et une affiche finale.",
+    "en": "Vector identities and posters: Le Fondant Ba7cha, Kross and a final poster."
+  },
+  "description": {
+    "fr": "Plusieurs fichiers Illustrator vectoriels, dont deux versions du logo Le Fondant Ba7cha, deux versions du logo Kross et une affiche finale.",
+    "en": "Several vector Illustrator files, including two versions of the Le Fondant Ba7cha logo, two Kross logo versions and a final poster."
+  },
+  "thumbnail": "/assets/projects/logo-kross.webp",
+  "gallery": [
+    "/assets/projects/logo-kross.webp",
+    "/assets/projects/logo-fondant.webp",
+    "/assets/projects/affiche.webp"
+  ],
+  "featured": false,
+  "todo": true,
+  "featuredOrder": 0,
+  "sortOrder": 7,
+  "draft": false,
+  "videoUrl": "",
+  "glb": "",
+  "liveUrl": ""
+}

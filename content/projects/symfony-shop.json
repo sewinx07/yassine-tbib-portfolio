@@ -1,0 +1,40 @@
+{
+  "slug": "symfony-shop",
+  "number": "06",
+  "category": "web",
+  "year": "2026",
+  "tools": [
+    "PHP",
+    "Symfony",
+    "Doctrine",
+    "Twig"
+  ],
+  "role": {
+    "fr": "Développeur",
+    "en": "Developer"
+  },
+  "title": {
+    "fr": "Boutique de matériel de camping",
+    "en": "Camping equipment store"
+  },
+  "excerpt": {
+    "fr": "Catalogue, panier, commandes et administration d’une boutique PHP/Symfony.",
+    "en": "Catalogue, cart, orders and admin for a PHP/Symfony store."
+  },
+  "description": {
+    "fr": "Projet Symfony complet avec entités Doctrine, formulaires, gestion des commandes et interface d’administration.",
+    "en": "A complete Symfony project with Doctrine entities, forms, order management and an administration interface."
+  },
+  "thumbnail": "/assets/projects/symfony-shop.webp",
+  "gallery": [
+    "/assets/projects/symfony-shop.webp"
+  ],
+  "featured": false,
+  "todo": true,
+  "featuredOrder": 0,
+  "sortOrder": 6,
+  "draft": false,
+  "videoUrl": "",
+  "glb": "",
+  "liveUrl": ""
+}

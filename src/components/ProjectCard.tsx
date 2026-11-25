@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { ArrowUpRight } from 'lucide-react'
-import { t, type Project } from '../data/content'
+import { t, type Project } from '../lib/content'
 import { useLanguage } from '../i18n/LanguageContext'
 import TodoBadge from './TodoBadge'
 

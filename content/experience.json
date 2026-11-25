@@ -1,0 +1,40 @@
+{
+  "items": [
+    {
+      "period": "2026 · 2 mois",
+      "title": {
+        "fr": "Stagiaire en design graphique",
+        "en": "Graphic design intern"
+      },
+      "place": "Société Rajah d’Impression — Gabès",
+      "detail": {
+        "fr": "Supports de communication visuelle, création et retouche sous Photoshop et Illustrator, préparation des fichiers pour l’impression.",
+        "en": "Visual communication material, creating and retouching visuals in Photoshop and Illustrator, preparing print-ready files."
+      }
+    },
+    {
+      "period": "2024 · 1 mois",
+      "title": {
+        "fr": "Stagiaire en diagnostic et maintenance automobile",
+        "en": "Automotive diagnostics & maintenance intern"
+      },
+      "place": "Gabès Motors — agence Mercedes, Gabès",
+      "detail": {
+        "fr": "Participation aux diagnostics, assistance aux travaux de maintenance et utilisation des outils sous supervision des techniciens.",
+        "en": "Vehicle diagnostics, maintenance support and use of diagnostic tools under technician supervision."
+      }
+    },
+    {
+      "period": "2024",
+      "title": {
+        "fr": "Bénévole",
+        "en": "Volunteer"
+      },
+      "place": "18e Festival du Cinéma Méditerranéen de Chenini",
+      "detail": {
+        "fr": "Accueil et orientation des visiteurs, participation à l’organisation des activités.",
+        "en": "Visitor welcome and guidance, help organising festival activities."
+      }
+    }
+  ]
+}

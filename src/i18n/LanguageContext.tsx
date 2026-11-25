@@ -1,6 +1,6 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react'
 import type { ReactNode } from 'react'
-import { i18n, localeContent, type Locale, type LocaleContent } from '../data/content'
+import { i18n, localeContent, type Locale, type LocaleContent } from '../lib/content'
 
 interface LanguageContextValue {
   locale: Locale

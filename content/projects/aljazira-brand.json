@@ -1,0 +1,39 @@
+{
+  "slug": "aljazira-brand",
+  "number": "02",
+  "category": "graphic",
+  "year": "2025",
+  "tools": [
+    "Adobe Illustrator"
+  ],
+  "role": {
+    "fr": "Designer graphique",
+    "en": "Graphic designer"
+  },
+  "title": {
+    "fr": "AL Jazira — Charte graphique",
+    "en": "AL Jazira — Brand guidelines"
+  },
+  "excerpt": {
+    "fr": "Refonte d’identité visuelle : logo, construction, couleurs, typographie et applications.",
+    "en": "Visual identity redesign: logo, construction, colours, typography and applications."
+  },
+  "description": {
+    "fr": "Une charte de 16 pages qui documente l’ancien logo, la refonte, la zone de protection, les tailles, les déclinaisons, la colorimétrie, la typographie, les interdits et la papeterie administrative.",
+    "en": "A 16-page guideline documenting the former logo, the redesign, clear space, sizing, variants, colour palette, typography, misuse examples and stationery."
+  },
+  "thumbnail": "/assets/projects/aljazira-charter.webp",
+  "gallery": [
+    "/assets/projects/aljazira-charter.webp",
+    "/assets/projects/aljazira-logo.webp",
+    "/assets/projects/aljazira-palette.webp"
+  ],
+  "featured": true,
+  "todo": true,
+  "featuredOrder": 2,
+  "sortOrder": 2,
+  "draft": false,
+  "videoUrl": "",
+  "glb": "",
+  "liveUrl": ""
+}

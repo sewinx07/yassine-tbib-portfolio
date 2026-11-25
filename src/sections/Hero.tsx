@@ -7,7 +7,7 @@ import { useLanguage } from '../i18n/LanguageContext'
 import { usePointer } from '../hooks/usePointer'
 import { useReducedMotion } from '../hooks/useReducedMotion'
 import { useCountUp } from '../hooks/useMotionSystem'
-import { stats } from '../data/content'
+import { stats } from '../lib/content'
 
 function Stat({ value, label, index }: { value: number; label: string; index: number }) {
   const ref = useRef<HTMLSpanElement>(null)

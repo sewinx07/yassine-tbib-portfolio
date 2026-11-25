@@ -1,0 +1,64 @@
+{
+  "items": [
+    {
+      "number": "01",
+      "icon": "briefcase",
+      "title": {
+        "fr": "Brief",
+        "en": "Brief"
+      },
+      "detail": {
+        "fr": "Comprendre le besoin et le contexte.",
+        "en": "Understand the need and the context."
+      }
+    },
+    {
+      "number": "02",
+      "icon": "sparkles",
+      "title": {
+        "fr": "Concept",
+        "en": "Concept"
+      },
+      "detail": {
+        "fr": "Esquisses, moodboard et direction visuelle.",
+        "en": "Sketches, moodboard and visual direction."
+      }
+    },
+    {
+      "number": "03",
+      "icon": "pen",
+      "title": {
+        "fr": "Design",
+        "en": "Design"
+      },
+      "detail": {
+        "fr": "Photoshop, Illustrator et explorations 3D.",
+        "en": "Photoshop, Illustrator and 3D explorations."
+      }
+    },
+    {
+      "number": "04",
+      "icon": "code",
+      "title": {
+        "fr": "Production",
+        "en": "Produce"
+      },
+      "detail": {
+        "fr": "Code, motion et builds Unity.",
+        "en": "Code, motion and Unity builds."
+      }
+    },
+    {
+      "number": "05",
+      "icon": "send",
+      "title": {
+        "fr": "Livraison",
+        "en": "Deliver"
+      },
+      "detail": {
+        "fr": "Fichiers prêts pour l’impression et exports optimisés.",
+        "en": "Print-ready files and optimized exports."
+      }
+    }
+  ]
+}

@@ -2,7 +2,7 @@ import { useMemo, useRef, useState } from 'react'
 import { ArrowLeft } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import ProjectCard from '../components/ProjectCard'
-import { projects, type Category } from '../data/content'
+import { projects, type Category } from '../lib/content'
 import { useLanguage } from '../i18n/LanguageContext'
 import { useReveal } from '../hooks/useMotionSystem'
 

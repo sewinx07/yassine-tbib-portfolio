@@ -1,0 +1,55 @@
+{
+  "groups": [
+    {
+      "label": {
+        "fr": "Web",
+        "en": "Web"
+      },
+      "items": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "PHP"
+      ]
+    },
+    {
+      "label": {
+        "fr": "Graphisme",
+        "en": "Graphic"
+      },
+      "items": [
+        "Adobe Photoshop",
+        "Adobe Illustrator"
+      ]
+    },
+    {
+      "label": {
+        "fr": "Motion",
+        "en": "Motion"
+      },
+      "items": [
+        "Adobe Premiere Pro",
+        "Adobe After Effects"
+      ]
+    },
+    {
+      "label": {
+        "fr": "3D",
+        "en": "3D"
+      },
+      "items": [
+        "Autodesk 3ds Max",
+        "SketchUp"
+      ]
+    },
+    {
+      "label": {
+        "fr": "XR & Jeux",
+        "en": "XR & Games"
+      },
+      "items": [
+        "Unity (VR, AR, jeux 2D / 2D games)"
+      ]
+    }
+  ]
+}

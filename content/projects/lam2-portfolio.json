@@ -1,0 +1,39 @@
+{
+  "slug": "lam2-portfolio",
+  "number": "10",
+  "category": "web",
+  "year": "2025",
+  "tools": [
+    "HTML",
+    "CSS",
+    "JavaScript"
+  ],
+  "role": {
+    "fr": "Développeur",
+    "en": "Developer"
+  },
+  "title": {
+    "fr": "Site vitrine HTML/CSS",
+    "en": "HTML/CSS portfolio site"
+  },
+  "excerpt": {
+    "fr": "Un site statique en HTML, CSS et JavaScript avec pages accueil, à propos et contact.",
+    "en": "A static HTML, CSS and JavaScript site with home, about and contact pages."
+  },
+  "description": {
+    "fr": "Site statique réalisé en HTML, CSS et JavaScript, avec une présentation accompagnante au format PDF.",
+    "en": "Static site built with HTML, CSS and JavaScript, with an accompanying PDF presentation."
+  },
+  "thumbnail": "/assets/projects/lam2-portfolio.webp",
+  "gallery": [
+    "/assets/projects/lam2-portfolio.webp"
+  ],
+  "featured": false,
+  "todo": true,
+  "featuredOrder": 0,
+  "sortOrder": 10,
+  "draft": false,
+  "videoUrl": "",
+  "glb": "",
+  "liveUrl": ""
+}

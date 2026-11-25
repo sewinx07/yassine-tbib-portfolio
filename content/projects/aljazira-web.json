@@ -1,0 +1,41 @@
+{
+  "slug": "aljazira-web",
+  "number": "05",
+  "category": "web",
+  "year": "2026",
+  "tools": [
+    "Angular",
+    "TypeScript",
+    "Node.js",
+    "Express",
+    "MongoDB"
+  ],
+  "role": {
+    "fr": "Développeur",
+    "en": "Developer"
+  },
+  "title": {
+    "fr": "AL Jazira — Boutique en ligne",
+    "en": "AL Jazira — Online store"
+  },
+  "excerpt": {
+    "fr": "Une boutique d’huile d’olive avec catalogue, panier, commandes et espace administrateur.",
+    "en": "An olive-oil store with catalogue, cart, orders and an admin area."
+  },
+  "description": {
+    "fr": "Application Angular côté client et API Node/Express côté serveur : catalogue produits, panier, commandes, contact et tableau de bord administrateur.",
+    "en": "Angular front end with a Node/Express API: product catalogue, cart, orders, contact and an admin dashboard."
+  },
+  "thumbnail": "/assets/projects/aljazira-web.webp",
+  "gallery": [
+    "/assets/projects/aljazira-web.webp"
+  ],
+  "featured": false,
+  "todo": true,
+  "featuredOrder": 0,
+  "sortOrder": 5,
+  "draft": false,
+  "videoUrl": "",
+  "glb": "",
+  "liveUrl": ""
+}

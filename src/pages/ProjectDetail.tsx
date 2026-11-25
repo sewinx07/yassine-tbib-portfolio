@@ -1,7 +1,7 @@
 import { useRef } from 'react'
 import { ArrowLeft, ArrowUpRight } from 'lucide-react'
 import { Link, useParams } from 'react-router-dom'
-import { projects, t } from '../data/content'
+import { projects, t } from '../lib/content'
 import { useLanguage } from '../i18n/LanguageContext'
 import { useReveal } from '../hooks/useMotionSystem'
 import TodoBadge from '../components/TodoBadge'

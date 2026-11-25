@@ -1,0 +1,40 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "projects": "Projets",
+    "lab": "Lab 3D",
+    "about": "Parcours",
+    "contact": "Contact"
+  },
+  "projectsPage": {
+    "eyebrow": "Archive / 2025 — 2026",
+    "title": "Tous les projets",
+    "intro": "Projets d’études, travaux de stage et explorations personnelles. Chaque fiche indique les outils réellement utilisés.",
+    "filters": {
+      "all": "Tout",
+      "graphic": "Graphisme",
+      "motion": "Motion",
+      "3d": "3D",
+      "xr": "XR & Jeux",
+      "web": "Web"
+    },
+    "count": "projets",
+    "empty": "Aucun projet dans cette catégorie pour le moment.",
+    "back": "Retour aux projets",
+    "tools": "Outils",
+    "year": "Année",
+    "role": "Rôle",
+    "next": "Projet suivant"
+  },
+  "footer": {
+    "made": "Conçu et développé par Yassine Tbib",
+    "rights": "Tous droits réservés.",
+    "top": "Retour en haut"
+  },
+  "notFound": {
+    "title": "Page introuvable",
+    "text": "Cette page n’existe pas ou a été déplacée.",
+    "back": "Retour à l’accueil"
+  },
+  "todoBadge": "TODO: confirm"
+}

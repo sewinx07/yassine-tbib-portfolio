@@ -1,0 +1,35 @@
+{
+  "slug": "motion-studies",
+  "number": "08",
+  "category": "motion",
+  "year": "2025 — 2026",
+  "tools": [
+    "Adobe After Effects"
+  ],
+  "role": {
+    "fr": "Motion designer",
+    "en": "Motion designer"
+  },
+  "title": {
+    "fr": "Études motion",
+    "en": "Motion studies"
+  },
+  "excerpt": {
+    "fr": "Dix projets After Effects explorant le rythme, le texte et les effets.",
+    "en": "Ten After Effects projects exploring rhythm, typography and effects."
+  },
+  "description": {
+    "fr": "Dix fichiers projet After Effects (dont motion.aep, flache.aep et Sur ma route 1 ily a eu.aep). Les rendus vidéo ne sont pas encore disponibles.",
+    "en": "Ten After Effects project files (including motion.aep, flache.aep and Sur ma route 1 ily a eu.aep). Video exports are not available yet."
+  },
+  "thumbnail": "/assets/projects/motion-placeholder.webp",
+  "gallery": [],
+  "featured": false,
+  "todo": true,
+  "featuredOrder": 0,
+  "sortOrder": 8,
+  "draft": false,
+  "videoUrl": "",
+  "glb": "",
+  "liveUrl": ""
+}

@@ -1,0 +1,90 @@
+{
+  "items": [
+    {
+      "period": "2025 — 2026",
+      "title": {
+        "fr": "Licence 2 — Art et Médiation",
+        "en": "BA 2nd year — Art & Mediation"
+      },
+      "place": "ISIMG — Institut Supérieur d’Informatique et de Multimédia de Gabès",
+      "detail": {
+        "fr": "Deuxième année de licence.",
+        "en": "Second year of the bachelor degree."
+      }
+    },
+    {
+      "period": "2024 — 2025",
+      "title": {
+        "fr": "Licence 1 — Art et Médiation",
+        "en": "BA 1st year — Art & Mediation"
+      },
+      "place": "ISIMG — Institut Supérieur d’Informatique et de Multimédia de Gabès",
+      "detail": {
+        "fr": "Première année de licence.",
+        "en": "First year of the bachelor degree."
+      }
+    },
+    {
+      "period": "2023 — 2024",
+      "title": {
+        "fr": "Licence 1 — Ingénierie des Systèmes Informatiques",
+        "en": "BA 1st year — Computer Systems Engineering"
+      },
+      "place": "ISIMG — Institut Supérieur d’Informatique et de Multimédia de Gabès",
+      "detail": {
+        "fr": "Première année de licence.",
+        "en": "First year of the bachelor degree."
+      }
+    },
+    {
+      "period": "2023",
+      "title": {
+        "fr": "Baccalauréat Informatique",
+        "en": "Baccalauréat in Computer Science"
+      },
+      "place": "Tunisie",
+      "detail": {
+        "fr": "Baccalauréat informatique.",
+        "en": "Computer science baccalauréat."
+      }
+    }
+  ],
+  "trainings": [
+    {
+      "period": "2024",
+      "title": {
+        "fr": "Techniques de communication",
+        "en": "Communication techniques"
+      },
+      "place": "",
+      "detail": {
+        "fr": "Formation complémentaire.",
+        "en": "Complementary training."
+      }
+    },
+    {
+      "period": "2023",
+      "title": {
+        "fr": "Entrepreneuriat",
+        "en": "Entrepreneurship"
+      },
+      "place": "",
+      "detail": {
+        "fr": "Formation complémentaire.",
+        "en": "Complementary training."
+      }
+    },
+    {
+      "period": "2024",
+      "title": {
+        "fr": "Mécanique et diagnostic automobile",
+        "en": "Mechanics & automotive diagnostics"
+      },
+      "place": "",
+      "detail": {
+        "fr": "Formation complémentaire.",
+        "en": "Complementary training."
+      }
+    }
+  ]
+}

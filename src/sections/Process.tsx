@@ -1,6 +1,6 @@
 import { Briefcase, Code2, PenLine, Send, Sparkles } from 'lucide-react'
 import SectionHeading from '../components/SectionHeading'
-import { processSteps, t, type ProcessStep } from '../data/content'
+import { processSteps, t, type ProcessStep } from '../lib/content'
 import { useLanguage } from '../i18n/LanguageContext'
 
 const icons = {

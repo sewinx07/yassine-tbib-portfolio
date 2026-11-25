@@ -1,0 +1,40 @@
+{
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "lab": "3D Lab",
+    "about": "Background",
+    "contact": "Contact"
+  },
+  "projectsPage": {
+    "eyebrow": "Archive / 2025 — 2026",
+    "title": "All projects",
+    "intro": "Coursework, internship work and personal explorations. Every card lists the tools actually used.",
+    "filters": {
+      "all": "All",
+      "graphic": "Graphic",
+      "motion": "Motion",
+      "3d": "3D",
+      "xr": "XR & Games",
+      "web": "Web"
+    },
+    "count": "projects",
+    "empty": "No projects in this category yet.",
+    "back": "Back to projects",
+    "tools": "Tools",
+    "year": "Year",
+    "role": "Role",
+    "next": "Next project"
+  },
+  "footer": {
+    "made": "Designed and built by Yassine Tbib",
+    "rights": "All rights reserved.",
+    "top": "Back to top"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "text": "This page does not exist or has moved.",
+    "back": "Back home"
+  },
+  "todoBadge": "TODO: confirm"
+}

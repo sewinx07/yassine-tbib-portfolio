@@ -1,0 +1,48 @@
+{
+  "items": [
+    {
+      "name": {
+        "fr": "Arabe",
+        "en": "Arabic"
+      },
+      "level": {
+        "fr": "Langue maternelle",
+        "en": "Native"
+      },
+      "value": 100
+    },
+    {
+      "name": {
+        "fr": "Allemand",
+        "en": "German"
+      },
+      "level": {
+        "fr": "Niveau B1",
+        "en": "B1"
+      },
+      "value": 62
+    },
+    {
+      "name": {
+        "fr": "Français",
+        "en": "French"
+      },
+      "level": {
+        "fr": "Intermédiaire",
+        "en": "Intermediate"
+      },
+      "value": 55
+    },
+    {
+      "name": {
+        "fr": "Anglais",
+        "en": "English"
+      },
+      "level": {
+        "fr": "Intermédiaire",
+        "en": "Intermediate"
+      },
+      "value": 55
+    }
+  ]
+}

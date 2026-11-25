@@ -1,0 +1,246 @@
+{
+  "defaultLanguage": "fr",
+  "hero": {
+    "greeting": {
+      "fr": "Bonjour, je suis",
+      "en": "Hello, I'm"
+    },
+    "firstName": {
+      "fr": "YASSINE",
+      "en": "YASSINE"
+    },
+    "lastName": {
+      "fr": "TBIB",
+      "en": "TBIB"
+    },
+    "title": {
+      "fr": "Multimedia Designer & Web Creator",
+      "en": "Multimedia Designer & Web Creator"
+    },
+    "bio": {
+      "fr": "Étudiant en multimédia à Gabès, passionné par l'informatique, le développement web et le design graphique. Sérieux, autonome et curieux, je transforme les idées en expériences numériques qui ont du caractère.",
+      "en": "A multimedia student based in Gabès, passionate about computer science, web development and graphic design. Serious, self-reliant and curious — I turn ideas into digital experiences with character."
+    },
+    "word": {
+      "fr": "PORTFOLIO",
+      "en": "PORTFOLIO"
+    },
+    "tagline": {
+      "fr": "Transformer les idées en expériences numériques immersives.",
+      "en": "Turning ideas into immersive digital experiences."
+    },
+    "scroll": {
+      "fr": "Défiler pour explorer",
+      "en": "Scroll to explore"
+    },
+    "location": {
+      "fr": "Gabès, Tunisie",
+      "en": "Gabès, Tunisia"
+    },
+    "statsLabel": [
+      {
+        "fr": "Années d'études",
+        "en": "Years of study"
+      },
+      {
+        "fr": "Outils maîtrisés",
+        "en": "Tools mastered"
+      },
+      {
+        "fr": "Langues parlées",
+        "en": "Languages spoken"
+      }
+    ]
+  },
+  "topbar": {
+    "role": {
+      "fr": "Multimedia Designer",
+      "en": "Multimedia Designer"
+    },
+    "availability": {
+      "fr": "Ouvert aux stages et opportunités",
+      "en": "Open to internships & opportunities"
+    },
+    "menu": {
+      "fr": "Ouvrir le menu",
+      "en": "Open menu"
+    },
+    "close": {
+      "fr": "Fermer le menu",
+      "en": "Close menu"
+    },
+    "availabilityEnabled": true
+  },
+  "sections": {
+    "selected": {
+      "eyebrow": {
+        "fr": "01 / Sélection",
+        "en": "01 / Selected"
+      },
+      "title": {
+        "fr": "Projets choisis",
+        "en": "Selected projects"
+      },
+      "viewAll": {
+        "fr": "Voir tous les projets",
+        "en": "View all projects"
+      },
+      "note": {
+        "fr": "Trois univers, une même exigence : du jeu au graphisme, jusqu’à la 3D.",
+        "en": "Three worlds, one standard of care: from games to graphics to 3D."
+      }
+    },
+    "lab": {
+      "eyebrow": {
+        "fr": "02 / Laboratoire",
+        "en": "02 / Laboratory"
+      },
+      "title": {
+        "fr": "Lab 3D",
+        "en": "3D Lab"
+      },
+      "description": {
+        "fr": "Des scènes construites sous Blender et SketchUp. Une fenêtre sur des mondes encore en mouvement.",
+        "en": "Scenes built in Blender and SketchUp. A window into worlds that are still in motion."
+      },
+      "drag": {
+        "fr": "Faites glisser pour explorer",
+        "en": "Drag to explore"
+      },
+      "frames": {
+        "fr": "Images réelles extraites du rendu",
+        "en": "Real frames extracted from the render"
+      }
+    },
+    "education": {
+      "eyebrow": {
+        "fr": "03 / Parcours",
+        "en": "03 / Background"
+      },
+      "title": {
+        "fr": "Formation & compétences",
+        "en": "Education & skills"
+      },
+      "timeline": {
+        "fr": "Formation",
+        "en": "Education"
+      },
+      "training": {
+        "fr": "Formations complémentaires",
+        "en": "Complementary training"
+      }
+    },
+    "experience": {
+      "eyebrow": {
+        "fr": "04 / Terrain",
+        "en": "04 / Field"
+      },
+      "title": {
+        "fr": "Expériences",
+        "en": "Experience"
+      },
+      "note": {
+        "fr": "Du graphisme en imprimerie au diagnostic automobile : la même attention aux détails.",
+        "en": "From print-shop graphics to automotive diagnostics: the same eye for detail."
+      }
+    },
+    "process": {
+      "eyebrow": {
+        "fr": "05 / Méthode",
+        "en": "05 / Method"
+      },
+      "title": {
+        "fr": "Comment je travaille",
+        "en": "How I work"
+      }
+    },
+    "contact": {
+      "eyebrow": {
+        "fr": "07 / Contact",
+        "en": "07 / Contact"
+      },
+      "title": {
+        "fr": "Travaillons ensemble",
+        "en": "Let's work together"
+      },
+      "intro": {
+        "fr": "Une idée, un stage, un projet à construire ? Écrivez-moi, je serai heureux d'en discuter.",
+        "en": "An idea, an internship, a project to build? Write to me — I would love to talk."
+      },
+      "email": {
+        "fr": "Email",
+        "en": "Email"
+      },
+      "phone": {
+        "fr": "Téléphone",
+        "en": "Phone"
+      },
+      "location": {
+        "fr": "Localisation",
+        "en": "Location"
+      },
+      "formName": {
+        "fr": "Votre nom",
+        "en": "Your name"
+      },
+      "formEmail": {
+        "fr": "Votre email",
+        "en": "Your email"
+      },
+      "formMessage": {
+        "fr": "Votre message",
+        "en": "Your message"
+      },
+      "formSend": {
+        "fr": "Envoyer le message",
+        "en": "Send message"
+      },
+      "formNote": {
+        "fr": "Le formulaire ouvre votre application email.",
+        "en": "The form opens your email app."
+      },
+      "download": {
+        "fr": "Télécharger le CV",
+        "en": "Download CV"
+      },
+      "socialTitle": {
+        "fr": "Réseaux",
+        "en": "Social"
+      },
+      "socialNote": {
+        "fr": "TODO: confirm — aucun lien social vérifié trouvé dans les dossiers.",
+        "en": "TODO: confirm — no verified social links found in the folders."
+      },
+      "beyond": {
+        "fr": "Au-delà de l’écran",
+        "en": "Beyond the screen"
+      },
+      "beyondDetail": {
+        "fr": "Musique, camping et électricité du bâtiment.",
+        "en": "Music, camping and building electricity."
+      }
+    }
+  },
+  "contact": {
+    "email": "tbibyassine03@gmail.com",
+    "phone": "+216 93 178 458",
+    "location": "Gabès, Tunisie",
+    "cv": "/assets/cv-yassine-tbib.pdf",
+    "socialLinks": []
+  },
+  "seo": {
+    "description": {
+      "fr": "Portfolio de Yassine Tbib, étudiant en multimédia à Gabès. Design graphique, motion, 3D, jeux et développement web.",
+      "en": "Portfolio of Yassine Tbib, multimedia student in Gabès. Graphic design, motion, 3D, games and web development."
+    },
+    "ogTitle": {
+      "fr": "Yassine Tbib — Multimedia Designer & Web Creator",
+      "en": "Yassine Tbib — Multimedia Designer & Web Creator"
+    },
+    "ogDescription": {
+      "fr": "Étudiant multimédia, créateur web et designer graphique. Gabès, Tunisie.",
+      "en": "Multimedia student, web creator and graphic designer. Gabès, Tunisia."
+    },
+    "ogImage": "/assets/hero-og.jpg"
+  }
+}

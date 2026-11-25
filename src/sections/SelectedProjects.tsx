@@ -2,13 +2,12 @@ import { Link } from 'react-router-dom'
 import { ArrowUpRight } from 'lucide-react'
 import SectionHeading from '../components/SectionHeading'
 import ProjectCard from '../components/ProjectCard'
-import { projects } from '../data/content'
+import { featuredProjects } from '../lib/content'
 import { useLanguage } from '../i18n/LanguageContext'
 import Magnetic from '../components/Magnetic'
 
 export default function SelectedProjects() {
   const { content } = useLanguage()
-  const featured = projects.filter((p) => p.featured)
 
   return (
     <section id="projects" className="section-shell scroll-mt-24 py-24 md:py-36">
@@ -26,7 +25,7 @@ export default function SelectedProjects() {
         }
       />
       <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
-        {featured.map((project, i) => (
+        {featuredProjects.map((project, i) => (
           <ProjectCard
             key={project.slug}
             project={project}

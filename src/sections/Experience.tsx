@@ -1,5 +1,5 @@
-import { t } from '../data/content'
-import { experience } from '../data/content'
+import { t } from '../lib/content'
+import { experience } from '../lib/content'
 import SectionHeading from '../components/SectionHeading'
 import { useLanguage } from '../i18n/LanguageContext'
 

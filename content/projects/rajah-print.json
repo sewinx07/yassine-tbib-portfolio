@@ -1,0 +1,41 @@
+{
+  "slug": "rajah-print",
+  "number": "04",
+  "category": "graphic",
+  "year": "2026",
+  "tools": [
+    "Adobe Photoshop",
+    "Adobe Illustrator"
+  ],
+  "role": {
+    "fr": "Stagiaire en design graphique",
+    "en": "Graphic design intern"
+  },
+  "title": {
+    "fr": "Rajah d’Impression — Supports imprimés",
+    "en": "Rajah Printing — Print collateral"
+  },
+  "excerpt": {
+    "fr": "Affiches, badges, cartes de visite et flyers préparés pendant le stage à Gabès.",
+    "en": "Posters, badges, business cards and flyers produced during the internship in Gabès."
+  },
+  "description": {
+    "fr": "Travaux réalisés au sein de Société Rajah d’Impression : affiches de la Foire internationale de Gabès, badges, billets, cartes de visite et flyers. Chaque support a demandé une attention particulière aux marges, au contraste et aux fichiers prêts pour l’impression.",
+    "en": "Work produced at Société Rajah d’Impression: posters for the Gabès International Fair, badges, tickets, business cards and flyers. Each format required care with margins, contrast and print-ready files."
+  },
+  "thumbnail": "/assets/projects/rajah-poster.webp",
+  "gallery": [
+    "/assets/projects/rajah-poster.webp",
+    "/assets/projects/rajah-badges.webp",
+    "/assets/projects/rajah-cards.webp",
+    "/assets/projects/rajah-flyer.webp"
+  ],
+  "featured": false,
+  "todo": true,
+  "featuredOrder": 0,
+  "sortOrder": 4,
+  "draft": false,
+  "videoUrl": "",
+  "glb": "",
+  "liveUrl": ""
+}
