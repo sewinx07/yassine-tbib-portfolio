@@ -8,7 +8,7 @@ This portfolio is a static Vite site plus three small Vercel functions. There is
 2. Import the repository in Vercel.
 3. Framework preset: **Vite**. Root directory: repository root.
 4. Build command: `npm run build`. Output directory: `dist`.
-5. Node.js version: **20.x** (`.nvmrc` and `engines` are included).
+5. Node.js version: **26.x** (`.nvmrc` and `engines` are included).
 6. Add the environment variables below, then deploy.
 
 `vercel.json` keeps `/admin/*` and `/api/*` out of the SPA fallback, applies security headers, caches hashed assets for one year and HTML for zero seconds.

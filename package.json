@@ -16,7 +16,7 @@
     "cms:local": "node scripts/generate-site.mjs --local && decap-server"
   },
   "engines": {
-    "node": "20.x"
+    "node": "26.x"
   },
   "dependencies": {
     "@fontsource/anton": "^5.1.1",

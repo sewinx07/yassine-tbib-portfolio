@@ -25,7 +25,7 @@ Resolved: a new 1085 × 1449 portrait source was processed with `npm run portrai
 12. Set `SITE_URL` and `GITHUB_REPO` in Vercel so generated `index.html`, `config.yml` and `sitemap.xml` use the final origin.
 13. Create the GitHub OAuth App and Resend key, then verify `/api/auth`, `/api/callback` and `/api/contact` on the deployed domain.
 14. Run Lighthouse on the deployed URL and tune if needed (target > 85).
-15. Portrait AVIF variants are generated alongside WebP; optionally add AVIF variants for the remaining project images too.
+15. Portrait AVIF/1x/2x variants are generated locally by `npm run portrait` but gitignored; optionally wire them up with `<picture>`/`srcset` and add AVIF for the remaining project images.
 16. Initialize a remote and push the git repository — the repo was initialized locally only. `npx vercel build` also requires an authenticated Vercel CLI session.
 
 ## Privacy

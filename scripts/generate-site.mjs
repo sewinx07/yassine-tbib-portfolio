@@ -39,7 +39,7 @@ async function generateAdmin(url) {
   const config = template
     .replaceAll('__LOCAL_BACKEND__', local ? 'local_backend: true\n' : '')
     .replaceAll('__BASE_URL__', url)
-    .replaceAll('__GITHUB_REPO__', env.GITHUB_REPO || 'YOUR_GITHUB_USERNAME/your-repo')
+    .replaceAll('__GITHUB_REPO__', env.GITHUB_REPO || 'sewinx07/yassine-tbib-portfolio')
 
   await mkdir(path.join(root, 'public/admin'), { recursive: true })
   await writeFile(path.join(root, 'public/admin/config.yml'), config, 'utf8')

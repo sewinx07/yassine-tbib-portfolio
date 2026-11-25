@@ -61,7 +61,7 @@ Generated assets are committed in `public/assets/`. The originals are never modi
 npm run portrait -- new-img.png
 ```
 
-The script removes the background (rembg / `isnet-general-use` by default), aligns the head to the existing cutout's framing, despills and grades the edges, generates a MiDaS depth map, writes WebP + AVIF variants at 1x/2x, and recomposes `hero-og.jpg`. Previous published files are copied to `public/assets/_archive/` before being replaced; the source photo is never modified. First run downloads the models (~180 MB rembg + ~64 MB MiDaS) into the user cache; later runs are offline. Override the rembg model with `PORTRAIT_REMBG_MODEL` if needed. The public path is centralised in `content/settings.json` → `hero_portrait` (also editable in the CMS).
+The script removes the background (rembg / `isnet-general-use` by default), aligns the head to the existing cutout's framing, despills and grades the edges, generates a MiDaS depth map, writes WebP + AVIF variants at 1x/2x, and recomposes `hero-og.jpg`. Only the canonical WebP files and the OG image are committed; the extra variants are gitignored because the current markup has no `<picture>`/`srcset` usage. Previous published files are copied to `public/assets/_archive/` before being replaced; the source photo is never modified. First run downloads the models (~180 MB rembg + ~64 MB MiDaS) into the user cache; later runs are offline. Override the rembg model with `PORTRAIT_REMBG_MODEL` if needed. The public path is centralised in `content/settings.json` → `hero_portrait` (also editable in the CMS).
 
 ## Content admin
 
@@ -112,7 +112,7 @@ public/assets/           optimized WebP/AVIF-ready exports
 
 ## Deployment
 
-Deploy on Vercel with Node 20 (`.nvmrc`). `vercel.json` rewrites unknown paths to `index.html` while excluding `/admin/*`, `/api/*` and static assets, and sets security headers plus cache rules. See [`DEPLOY.md`](DEPLOY.md) for the OAuth app, Resend, optional Upstash and preview/rollback workflow. Confirm the final `og:image` URL and social links before going live — see [`TODO.md`](TODO.md).
+Deploy on Vercel with Node 26 (`.nvmrc`). `vercel.json` rewrites unknown paths to `index.html` while excluding `/admin/*`, `/api/*` and static assets, and sets security headers plus cache rules. See [`DEPLOY.md`](DEPLOY.md) for the OAuth app, Resend, optional Upstash and preview/rollback workflow. Confirm the final `og:image` URL and social links before going live — see [`TODO.md`](TODO.md).
 
 Vercel Web Analytics is dynamically imported in production only. Speed Insights is intentionally optional and not enabled by default.
 
